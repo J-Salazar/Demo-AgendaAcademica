@@ -15,6 +15,7 @@ class CreateOrgnzsTable extends Migration
         Schema::create('orgnzs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('alias')->unique();
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
