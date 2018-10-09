@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>TODO supply a title</title>
+    <title>Agenda Académica</title>
     <meta charset="UTF-8">
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,20 +30,20 @@
 
         </div>
 
-        <div class="col-lg-3 mt-1">
-            <a class="btn btn-primary btn-block " href="#">
-                Iniciar Sesión
-            </a>
-        </div>
-        <div class="col-lg-3 mt-1">
-            <a class="btn btn-primary btn-block " href="#">
-                Registrarse
-            </a>
-        </div>
+            <div class="col-lg-3 mt-1">
+                <a class="btn btn-primary btn-block mybutton" href="{{ url('/user/login') }}">
+                    Iniciar Sesión
+                </a>
+            </div>
+            <div class="col-lg-3 mt-1 ">
+                <a class="btn btn-primary btn-block mybutton" href="{{ url('/user/register') }}">
+                    Registrarse
+                </a>
+            </div>
 
     </div>
 </div>
-<div class="container-fluid mt-3">
+<div class="container-fluid mt-3 px-5" style="padding-left: 5rem !important; padding-right: 5rem !important;">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -66,7 +66,9 @@
             </a>
         </div>
     </div>
+</div>
 
+<div class="container-fluid mt-3 px-4">
     <!-- Section: Features v.2 -->
     <section class="my-5">
 
@@ -392,7 +394,7 @@
         <h1 class="display-4">Pricing</h1>
         <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
     </div>
-    <div class="card-deck mb-3 text-center">
+    <div class="card-deck mb-3 text-center" id="mycards">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Free</h4>
