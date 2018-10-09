@@ -5,10 +5,12 @@ namespace App;
 use App\Notifications\OrgnzResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 
 class Orgnz extends Authenticatable
 {
     use Notifiable;
+    use Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -16,7 +18,7 @@ class Orgnz extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','alias',
     ];
 
     /**
@@ -25,7 +27,7 @@ class Orgnz extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token','card_brand',
     ];
 
     /**
