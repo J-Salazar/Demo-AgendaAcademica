@@ -18,11 +18,11 @@
 
             img.mylogo {
 
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                width: 50%;
-                height: 50%;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                width: 50% !important;
+                height: 50% !important;
             }
 
 
@@ -33,11 +33,11 @@
 
     img.mylogo {
 
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 75%;
-        height: 75%;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 75% !important;
+        height: 75% !important;
     }
 
 
@@ -49,11 +49,11 @@
 
 
     a.mybutton{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 11px;
-        font-size: 12px;
+        display: block !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 11px !important;
+        font-size: 12px !important;
 
     }
 
@@ -62,21 +62,21 @@
 
 @media (max-width: 845px) {
     #mycards {
-        -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
-        margin-right: -15px;
-        margin-left: -15px;
+        -ms-flex-flow: row wrap !important;
+        flex-flow: row wrap !important;
+        margin-right: -15px !important;
+        margin-left: -15px !important;
     }
 
     #mycards  {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex: 1 0 0%;
-        flex: 1 0 0%;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        margin-right: 15px;
-        margin-bottom: 0;
-        margin-left: 15px;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -ms-flex: 1 0 0% !important;
+        flex: 1 0 0% !important;
+        -ms-flex-direction: column !important;
+        flex-direction: column !important;
+        margin-right: 15px !important;
+        margin-bottom: 0 !important;
+        margin-left: 15px !important;
     }
 }
