@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,11 +26,9 @@
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                <button type="button" class="navbar-toggle collapsed btn btn-outline-info" data-toggle="collapse" data-target="#app-navbar-collapse">
+
+                    <img src="/open-iconic-master/svg/caret-bottom.svg" alt="caret-bottom">
                 </button>
 
                 <!-- Branding Image -->
@@ -49,8 +47,11 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/user/login') }}">Login</a></li>
-                        <li><a href="{{ url('/user/register') }}">Register</a></li>
+                        <li><a href="{{ url('/user/login') }}">Iniciar Sesión como Usuario</a></li>
+
+                        <li><a href="{{ url('/orgnz/login') }}">Iniciar Sesión como Organizador</a></li>
+
+                        <li><a href="{{ url('/user/register') }}">Registrarse como Usuario</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
