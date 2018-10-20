@@ -360,12 +360,17 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
 
+<<<<<<< HEAD
                 <a href="{{ url('/user/logout') }}" class="nav-link" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
+=======
+                <a href="#" class="nav-link">
+>>>>>>> 3de746ba436af3cf6904a5e5d7cf640e4bae49d4
                     <img src="{{asset('open-iconic-master/png/account-logout-3x.png')}}"
                          style="filter: invert(90%);"
                     >
                     <span id="cerrar">Cerrar Sesion</span>
+<<<<<<< HEAD
                     <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
@@ -380,6 +385,9 @@
                     {{--<form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">--}}
                     {{--{{ csrf_field() }}--}}
                     {{--</form>--}}
+=======
+                </a>
+>>>>>>> 3de746ba436af3cf6904a5e5d7cf640e4bae49d4
                 </ul>
             </div>
             <!-- /.sidebar -->
@@ -500,10 +508,15 @@
             <!-- Control sidebar content goes here -->
         {{--</aside>--}}
         <!-- /.control-sidebar -->
+<<<<<<< HEAD
     @else
             @yield('content')
     @endif
 
+=======
+
+    @endif
+>>>>>>> 3de746ba436af3cf6904a5e5d7cf640e4bae49d4
     </div>
     <!-- ./wrapper -->
 
