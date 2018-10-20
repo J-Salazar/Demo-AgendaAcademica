@@ -159,8 +159,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        /*Sistema de pagos, suscripcion*/
-        Laravel\Cashier\CashierServiceProvider::class
+
     ],
 
     /*
