@@ -510,6 +510,88 @@
         <!-- /.control-sidebar -->
 
     @else
+            <nav class="navbar navbar-default navbar-static-top">
+
+                    {{--<div class="navbar-header">--}}
+
+                    {{--<!-- Collapsed Hamburger -->--}}
+                    {{--<button type="button" class="navbar-toggle collapsed btn btn-outline-info dropdown" data-toggle="collapse" data-target="#app-navbar-collapse">--}}
+
+                        {{--<img src="/open-iconic-master/svg/caret-bottom.svg" alt="caret-bottom">--}}
+                    {{--</button>--}}
+
+                    {{--<!-- Branding Image -->--}}
+                    {{--<a class="navbar-brand" href="{{ url('/user') }}">--}}
+                        {{--{{ config('app.name', 'Laravel Multi Auth Guard') }}: User--}}
+                    {{--</a>--}}
+                    {{--</div>--}}
+
+                    {{--<div class="collapse navbar-collapse" id="app-navbar-collapse">--}}
+                        {{--<!-- Left Side Of Navbar -->--}}
+                        {{--<ul class="nav navbar-nav">--}}
+                            {{--&nbsp;--}}
+                        {{--</ul>--}}
+
+                        {{--<!-- Right Side Of Navbar -->--}}
+                        {{--<ul class="nav navbar-nav navbar-right">--}}
+                        {{--<!-- Authentication Links -->--}}
+
+                        {{--<li><a href="{{ url('/user/login') }}">Iniciar Sesión como Usuario</a></li>--}}
+
+                        {{--<li><a href="{{ url('/orgnz/login') }}">Iniciar Sesión como Organizador</a></li>--}}
+
+                        {{--<li><a href="{{ url('/user/register') }}">Registrarse como Usuario</a></li>--}}
+
+                        {{--</ul>--}}
+                    {{--</div>--}}
+
+                <ul class="nav-header nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+
+
+                    <ul class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <img src="{{asset('open-iconic-master/png/caret-bottom.png')}}">
+                            <p>
+                                {{ config('app.name', 'Laravel Multi Auth Guard') }}: User
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview ml-3">
+                            <li class="nav-item">
+                                <a href="{{ url('/user/login') }}" class="nav-link">
+                                    <img src="{{asset('open-iconic-master/png/caret-right.png')}}"
+                                         style="filter: invert(90%);"
+                                    >
+                                    <p>Iniciar Sesión como Usuario</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/orgnz/login') }}" class="nav-link">
+                                    <img src="{{asset('open-iconic-master/png/caret-right.png')}}"
+                                         style="filter: invert(90%);"
+                                    >
+                                    <p>Iniciar Sesión como Organizador</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/user/register') }}" class="nav-link">
+                                    <img src="{{asset('open-iconic-master/png/caret-right.png')}}"
+                                         style="filter: invert(90%);"
+                                    >
+                                    <p>Registrarse como Usuario</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </ul>
+
+
+
+                </ul>
+
+
+
+            </nav>
             @yield('content')
     @endif
 
