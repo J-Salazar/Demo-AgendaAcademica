@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Agenda Académica</title>
+    <title>{{ Auth::user() }}</title>
     <meta charset="UTF-8">
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,9 +110,9 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="col-lg-6 ">
-
+            <a href="{{url('/')}}">
             <img src=" {{ asset('img/logos/logo.png') }}"  alt="#" class="col-xl-12 mylogo">
-
+            </a>
 
         </div>
 
