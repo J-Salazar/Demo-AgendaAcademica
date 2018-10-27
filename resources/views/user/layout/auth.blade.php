@@ -129,8 +129,10 @@
                 </ul>
             </nav>
             <!-- /.navbar -->
-                <!-- Main Sidebar Container -->
-                <aside class="main-sidebar sidebar-light-dark elevation-4"
+
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-light-dark elevation-4"
                        style="background-color: #FCFAFA"
                 >
                     <!-- Brand Logo -->
@@ -155,130 +157,7 @@
                             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-
-                                        <img src="{{asset('open-iconic-master/png/home-3x.png')}}"
-                                             style="filter: invert(100%);"
-                                        >
-                                        <p>Inicio</p>
-                                    </a>
-                                </li>
-                                <li class="nav-header">Eventos</li>
-
-                                <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
-
-                                        <img src="{{asset('open-iconic-master/png/envelope-closed-3x.png')}}"
-                                             style="filter: invert(10%);"
-                                        >
-                                        <p>
-                                            Eventos
-                                            <i class="fa fa-angle-left right"></i>
-                                        </p>
-                                    </a>
-                                    <ul class="nav nav-treeview ml-3">
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-
-                                                <img src="{{asset('open-iconic-master/png/pin-2x.png')}}"
-                                                     style="filter: invert(10%);"
-                                                >
-                                                <p>Me interesan</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-
-                                                <img src="{{asset('open-iconic-master/png/pencil-2x.png')}}"
-                                                     style="filter: invert(10%);"
-                                                >
-                                                <p>Asistiré</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link">
-
-                                                <img src="{{asset('open-iconic-master/png/eye-2x.png')}}"
-                                                     style="filter: invert(10%);"
-                                                >
-                                                <p>Historial</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <img src="{{asset('open-iconic-master/png/book-3x.png')}}"
-                                             style="filter: invert(10%);"
-                                        >
-                                        <p>
-                                            Mi agenda
-                                            <span class="badge badge-info right">2</span>
-                                        </p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-header">Configuracion</li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <img src="{{asset('open-iconic-master/png/pencil-3x.png')}}"
-                                             style="filter: invert(10%);"
-                                        >
-                                        <p>Perfil</p>
-                                    </a>
-                                </li>
-
-                                <li class="nav-item" style="position: fixed; bottom: 0;">
-                                    <a href="{{ url('/user/logout') }}" class="nav-link"
-                                       onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                                        <img src="{{ asset('open-iconic-master/png/account-logout-3x.png') }}">
-                                        Cerrar Sesion
-                                    </a>
-
-                                    <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-
-                            </ul>
-
-                        </nav>
-
-                        <!-- /.sidebar-menu -->
-
-                    </div>
-                    <!-- /.sidebar -->
-
-                </aside>
-
-                <!-- Main Sidebar Container -->
-                <aside class="main-sidebar sidebar-light-dark elevation-4"
-                       style="background-color: #FCFAFA"
-                >
-                    <!-- Brand Logo -->
-
-                    <!-- Sidebar -->
-                    <div class="sidebar">
-                        <!-- Sidebar user panel (optional) -->
-                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                            <div class="image">
-                                <img src="{{asset('open-iconic-master/png/person-3x.png')}}"
-                                     alt="User Image"
-                                     style="border-radius: 15px;"
-                                >
-                            </div>
-                            <div class="info">
-                                <a href="#" class="d-block">{{ Auth::user()->name }}</a>
-                            </div>
-                        </div>
-
-                        <!-- Sidebar Menu -->
-                        <nav class="mt-2">
-                            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link @yield('link-inicio')">
+                                    <a href="{{ url('/user/home') }}" class="nav-link @yield('link-inicio')">
 
                                         <img src="{{asset('open-iconic-master/png/home-3x.png')}}"
                                              style="filter: invert(@yield('inicio-activo','10%'));"
@@ -288,7 +167,7 @@
                                 </li>
                                 <li class="nav-header">Eventos</li>
 
-                                <li class="nav-item has-treeview">
+                                <li class="nav-item has-treeview @yield('menu-eventos')">
                                     <a href="#" class="nav-link @yield('link-eventos')">
 
                                         <img src="{{asset('open-iconic-master/png/envelope-closed-3x.png')}}"
@@ -301,25 +180,33 @@
                                     </a>
                                     <ul class="nav nav-treeview ml-3">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link @yield('link-meinteresa')">
+                                            <a href="{{ url('user/interest') }}" class="nav-link @yield('link-meinteresa')"
+                                               style="@yield('estilo-meinteresa')"
+                                            >
 
                                                 <img src="{{asset('open-iconic-master/png/pin-2x.png')}}"
-                                                     style="filter: invert(@yield('meinteresa-activo','10%'));"
+                                                     style="filter: invert(@yield('meinteresa-activo','10%'));
+                                                             "
                                                 >
                                                 <p>Me interesan</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ url('user/attend') }}" class="nav-link @yield('link-asistire')">
+                                            <a href="{{ url('user/attend') }}" class="nav-link @yield('link-asistire')"
+                                            style="@yield('estilo-asistire')"
+                                            >
 
                                                 <img src="{{asset('open-iconic-master/png/pencil-2x.png')}}"
-                                                     style="filter: invert(@yield('asistire-activo','10%'));"
+                                                     style="filter: invert(@yield('asistire-activo','10%'));
+                                                     "
                                                 >
                                                 <p>Asistiré</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link @yield('link-historial')">
+                                            <a href="{{ url('user/record') }}" class="nav-link @yield('link-historial')"
+                                               style="@yield('estilo-historial')"
+                                            >
 
                                                 <img src="{{asset('open-iconic-master/png/eye-2x.png')}}"
                                                      style="filter: invert(@yield('historial-activo','10%'));"
@@ -330,7 +217,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link @yield('link-miagenda')">
+                                    <a href="{{ url('user/schedule') }}" class="nav-link @yield('link-miagenda')">
                                         <img src="{{asset('open-iconic-master/png/book-3x.png')}}"
                                              style="filter: invert(@yield('miagenda-activo','10%'));"
                                         >
@@ -343,7 +230,7 @@
 
                                 <li class="nav-header">Configuracion</li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link @yield('link-perfil')">
+                                    <a href="{{ url('user/profile') }}" class="nav-link @yield('link-perfil')">
                                         <img src="{{asset('open-iconic-master/png/pencil-3x.png')}}"
                                              style="filter: invert(@yield('perfil-activo','10%'));"
                                         >
@@ -356,7 +243,7 @@
                                        onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                         <img src="{{ asset('open-iconic-master/png/account-logout-3x.png') }}">
-                                        Cerrar Sesion
+                                        <p>Cerrar Sesion</p>
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">

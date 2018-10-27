@@ -43,7 +43,7 @@ Route::group(['prefix' => 'orgnz'], function () {
   Route::get('/password/reset/{token}', 'OrgnzAuth\ResetPasswordController@showResetForm');
 });
 
-Route::group(['prefix' => 'user'], function () {
+Route::group(['prefix' => 'user', 'middleware' => 'web'], function () {
   Route::get('/login', 'UserAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'UserAuth\LoginController@login');
   Route::post('/logout', 'UserAuth\LoginController@logout')->name('logout');
