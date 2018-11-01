@@ -1,4 +1,4 @@
-@extends('user.layout.auth')
+@extends('admin.layout.auth')
 
 @section('contenido')
 <div class="container">

@@ -18,7 +18,7 @@ class Orgnz extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','alias',
+        'name','last_name','alias', 'email', 'password','alias',
     ];
 
     /**

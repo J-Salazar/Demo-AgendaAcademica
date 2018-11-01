@@ -1,4 +1,4 @@
-@extends('user.layout.auth')
+@extends('admin.layout.auth')
 
 @section('contenido')
 <div class="container">
@@ -11,7 +11,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label">Nombres</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
@@ -19,6 +19,34 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Apellidos</label>
+
+                            <div class="col-md-6">
+                                <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}" autofocus>
+
+                                @if ($errors->has('last_name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
+                            <label for="name" class="col-md-4 control-label">Nombre de usuario</label>
+
+                            <div class="col-md-6">
+                                <input id="alias" type="text" class="form-control" name="alias" value="{{ old('alias') }}" autofocus>
+
+                                @if ($errors->has('alias'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('alias') }}</strong>
                                     </span>
                                 @endif
                             </div>
