@@ -7,5 +7,5 @@
 
 
 @section('contenido')
-    <span>ABCDEF</span>
+    <p>{{ Auth::user() }}</p>
 @endsection
