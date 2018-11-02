@@ -70,3 +70,5 @@ Route::get('/create', function () {
 
     return view('orgnz.pages.create');
 })->name('create');
+
+Route::post('/update', 'OrgnzAuth\EditProfileController@edit');

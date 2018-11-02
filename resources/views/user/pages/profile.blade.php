@@ -16,12 +16,12 @@
                     <div class="col-sm-6">
                         <h1>Perfil</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Calendar</li>
-                        </ol>
-                    </div>
+                    {{--<div class="col-sm-6">--}}
+                        {{--<ol class="breadcrumb float-sm-right">--}}
+                            {{--<li class="breadcrumb-item"><a href="#">Home</a></li>--}}
+                            {{--<li class="breadcrumb-item active">Calendar</li>--}}
+                        {{--</ol>--}}
+                    {{--</div>--}}
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -35,18 +35,18 @@
                         <form method="POST" action="{{url('/user/update')}}">
                             {{ csrf_field() }}
                             <p class="card-title">Nombres</p>
-                            <input class="border-light w-100 bg-gray-light" name="new_user_name"  value="{{ Auth::user()->name }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_name"  value="{{ Auth::user()->name }}"><br>
                             <p class="card-title">Apellidos</p>
-                            <input class="border-light w-100 bg-gray-light" name="new_user_last_name"  value="{{ Auth::user()->last_name }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_last_name"  value="{{ Auth::user()->last_name }}"><br>
                             <p class="card-title">Email</p>
-                            <input class="border-light w-100 bg-gray-light" name="new_user_email"  value="{{ Auth::user()->email }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_email"  value="{{ Auth::user()->email }}"><br>
                             @if ($errors->has('new_user_email'))
                                 <span class="help-block">
                                         <strong>Email no válido</strong>
                                     </span>
                             @endif
                             <p class="card-title">Nombre de Usuario</p>
-                            <input class="border-light w-100 bg-gray-light" name="new_user_alias"  value="{{ Auth::user()->alias }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_alias"  value="{{ Auth::user()->alias }}"><br>
                             @if ($errors->has('new_user_alias'))
                                 <span class="help-block">
                                         <strong>Nombre de usuario no válido</strong>

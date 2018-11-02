@@ -59,3 +59,5 @@ Route::get('/schedule', function () {
 
     return view('admin.pages.schedule');
 })->name('schedule');
+
+Route::post('/update', 'AdminAuth\EditProfileController@edit');
