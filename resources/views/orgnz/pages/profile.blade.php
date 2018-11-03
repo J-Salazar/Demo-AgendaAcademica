@@ -52,7 +52,7 @@
                                     </span>
                             @endif
                             <div class="modal-footer">
-                                <button class="btn-primary" type="submit">Actualizar</button>
+                                <button class="btn-primary" type="submit">Actualizar datos</button>
                             </div>
                         </form>
 

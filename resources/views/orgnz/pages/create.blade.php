@@ -35,17 +35,43 @@
                         <form method="POST" action="{{url('/orgnz/create_event')}}">
                             {{ csrf_field() }}
                             <p class="card-title">Título</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_event_title"><br>
+                            <input class="border-light w-100 rounded " name="new_event_title" value="{{ old('new_event_title') }}"><br>
+
+                            @if($errors->has('new_event_title'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
                             <p class="card-title">Descripción</p>
-                            <textarea class="border-light input-group form-control rounded bg-gray-light" name="new_event_description"></textarea><br>
+                            <textarea class="border-secondary input-group form-control rounded "
+                                      name="new_event_description"
+                                      rows="5"
+                                      >{{ old('new_event_description') }}</textarea><br>
+
+                            @if($errors->has('new_event_description'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
                             <p class="card-title">Lugar</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_event_site"><br>
+                            <input class="border-light w-100 rounded " value="{{ old('new_event_site') }}"  name="new_event_site"><br>
+
+                            @if($errors->has('new_event_site'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
                             <p class="card-title">Etiquetas</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_event_tag"><br>
-                            <p class="card-title">Día del evento</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_event_date"><br>
-                            <p class="card-title">Hora del evento</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_event_hour"><br>
+                            <input class="border-light w-100 rounded " value="{{ old('new_event_tag')  }}" name="new_event_tag"><br>
+
+                            @if($errors->has('new_event_tag'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
+                            <p class="card-title">Fecha del evento</p>
+                            <input class="border-light w-100 rounded " value="{{ old('new_event_date') }}" name="new_event_date"><br>
+
+                            @if($errors->has('new_event_date'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
                             <div class="modal-footer">
                                 <button class="btn-primary" type="submit">Crear Evento</button>
                             </div>

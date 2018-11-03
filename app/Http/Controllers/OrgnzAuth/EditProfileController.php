@@ -18,8 +18,10 @@ class EditProfileController extends Controller
         $mensaje_exitoso = '';
 
         $request->validate([
-            'new_orgnz_email' => 'required|unique:orgnzs,email,'.$id,
-            'new_orgnz_alias' => 'required|unique:orgnzs,alias,'.$id,
+            'new_orgnz_name'        => 'required',
+            'new_orgnz_last_name'   => 'required',
+            'new_orgnz_email'       => 'required|unique:orgnzs,email,'.$id,
+            'new_orgnz_alias'       => 'required|unique:orgnzs,alias,'.$id,
         ]);
 //
 //        User::where('id',$id)->update([

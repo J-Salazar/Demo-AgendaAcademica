@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Event extends Model
+{
+    //
+    protected $fillable = [
+        'orgnz_id','title','description','site','tag','event_date',
+    ];
+
+    public function orgnzs()
+    {
+        return $this -> belongsTo('App\Orgnz', 'orgnz_id');
+    }
+}

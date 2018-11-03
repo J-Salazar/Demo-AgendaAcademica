@@ -103,17 +103,17 @@
 
                 </ul>
 
-                <!-- SEARCH FORM -->
-                <form class="form-inline ml-3">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-navbar" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                {{--<!-- SEARCH FORM -->--}}
+                {{--<form class="form-inline ml-3">--}}
+                    {{--<div class="input-group input-group-sm">--}}
+                        {{--<input class="form-control form-control-navbar" type="search" placeholder="Buscar" aria-label="Search">--}}
+                        {{--<div class="input-group-append">--}}
+                            {{--<button class="btn btn-navbar" type="submit">--}}
+                                {{--<i class="fa fa-search"></i>--}}
+                            {{--</button>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</form>--}}
 
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
@@ -184,46 +184,57 @@
                                                style="@yield('estilo-crear')"
                                             >
 
-                                                <img src="{{asset('open-iconic-master/png/timer-3x.png')}}"
+                                                <img src="{{asset('open-iconic-master/png/timer-2x.png')}}"
                                                      style="filter: invert(@yield('crear-activo','10%'));
                                                              "
                                                 >
                                                 <p>Crear evento</p>
                                             </a>
                                         </li>
+                                        {{--<li class="nav-item">--}}
+                                            {{--<a href="{{ url('orgnz/interest') }}" class="nav-link @yield('link-meinteresa')"--}}
+                                               {{--style="@yield('estilo-meinteresa')"--}}
+                                            {{-->--}}
+
+                                                {{--<img src="{{asset('open-iconic-master/png/pin-2x.png')}}"--}}
+                                                     {{--style="filter: invert(@yield('meinteresa-activo','10%'));--}}
+                                                             {{--"--}}
+                                                {{-->--}}
+                                                {{--<p>Me interesan</p>--}}
+                                            {{--</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li class="nav-item">--}}
+                                            {{--<a href="{{ url('orgnz/attend') }}" class="nav-link @yield('link-asistire')"--}}
+                                            {{--style="@yield('estilo-asistire')"--}}
+                                            {{-->--}}
+
+                                                {{--<img src="{{asset('open-iconic-master/png/pencil-2x.png')}}"--}}
+                                                     {{--style="filter: invert(@yield('asistire-activo','10%'));--}}
+                                                     {{--"--}}
+                                                {{-->--}}
+                                                {{--<p>Asistiré</p>--}}
+                                            {{--</a>--}}
+                                        {{--</li>--}}
+                                        {{--<li class="nav-item">--}}
+                                            {{--<a href="{{ url('orgnz/record') }}" class="nav-link @yield('link-historial')"--}}
+                                               {{--style="@yield('estilo-historial')"--}}
+                                            {{-->--}}
+
+                                                {{--<img src="{{asset('open-iconic-master/png/eye-2x.png')}}"--}}
+                                                     {{--style="filter: invert(@yield('historial-activo','10%'));"--}}
+                                                {{-->--}}
+                                                {{--<p>Historial</p>--}}
+                                            {{--</a>--}}
+                                        {{--</li>--}}
                                         <li class="nav-item">
-                                            <a href="{{ url('orgnz/interest') }}" class="nav-link @yield('link-meinteresa')"
-                                               style="@yield('estilo-meinteresa')"
+                                            <a href="{{ url('orgnz/events') }}" class="nav-link @yield('link-mis-eventos')"
+                                            style="@yield('estilo-mis-eventos')"
                                             >
 
-                                                <img src="{{asset('open-iconic-master/png/pin-2x.png')}}"
-                                                     style="filter: invert(@yield('meinteresa-activo','10%'));
-                                                             "
-                                                >
-                                                <p>Me interesan</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ url('orgnz/attend') }}" class="nav-link @yield('link-asistire')"
-                                            style="@yield('estilo-asistire')"
+                                            <img src="{{asset('open-iconic-master/png/eye-2x.png')}}"
+                                            style="filter: invert(@yield('mis-eventos-activo','10%'));"
                                             >
-
-                                                <img src="{{asset('open-iconic-master/png/pencil-2x.png')}}"
-                                                     style="filter: invert(@yield('asistire-activo','10%'));
-                                                     "
-                                                >
-                                                <p>Asistiré</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="{{ url('orgnz/record') }}" class="nav-link @yield('link-historial')"
-                                               style="@yield('estilo-historial')"
-                                            >
-
-                                                <img src="{{asset('open-iconic-master/png/eye-2x.png')}}"
-                                                     style="filter: invert(@yield('historial-activo','10%'));"
-                                                >
-                                                <p>Historial</p>
+                                            <p>Mis eventos</p>
                                             </a>
                                         </li>
                                     </ul>

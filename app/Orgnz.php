@@ -41,8 +41,8 @@ class Orgnz extends Authenticatable
         $this->notify(new OrgnzResetPassword($token));
     }
 
-    public function users()
+    public function events()
     {
-        return $this->belongsToMany(User::class);
+        return $this->hasMany('App\Event');
     }
 }

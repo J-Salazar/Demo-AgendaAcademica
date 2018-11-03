@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers\OrgnzAuth;
 
+use App\Event;
 use App\Orgnz;
+use App;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 class CreateEventController extends Controller
 {
-    //
-
 
     public function create_event(Request $request){
-        $user = Auth::user();
-        $id = Auth::user()->id;
-        $mensaje_exitoso = '';
+
+        $orgnz_id = Auth::user()->id;
+        $orgnz = App\User::Find($orgnz_id);
+        $mensaje_exitoso = "";
 
         $request->validate([
-            'new_orgnz_email' => 'required|unique:orgnzs,email,'.$id,
-            'new_orgnz_alias' => 'required|unique:orgnzs,alias,'.$id,
+            'new_event_title' => 'required',
+            'new_event_description' => 'required',
+            'new_event_site' => 'required',
+            'new_event_tag' => 'required',
+            'new_event_date' => 'required',
         ]);
 //
 //        User::where('id',$id)->update([
@@ -29,21 +33,20 @@ class CreateEventController extends Controller
 //                                        'email'     => $request->new_user_email
 //        ]);
 
+        $new_event = new Event;
+
+        $new_event -> orgnzs() -> associate($orgnz);
+        $new_event->title      = $request->new_event_title;
+        $new_event->description= $request->new_event_description;
+        $new_event->site       = $request->new_event_site;
+        $new_event->tag        = $request->new_event_tag;
+        $new_event->event_date = $request->new_event_date;
 
 
-        $current_orgnz = Orgnz::Find($id);
+        $new_event -> save();
+        $mensaje_exitoso = "Evento creado satisfactoriamente";
 
-        $current_orgnz->name      = $request->new_orgnz_name;
-        $current_orgnz->last_name = $request->new_orgnz_last_name;
-        $current_orgnz->alias     = $request->new_orgnz_alias;
-        $current_orgnz->email     = $request->new_orgnz_email;
-        if($current_orgnz->save()){
-            $mensaje_exitoso = 'Datos actualizados correctamente';
-        }
-
-
-
-        return redirect('orgnz/profile')->with('mensaje_exitoso',$mensaje_exitoso);
+        return redirect('orgnz/create')->with('mensaje_exitoso',$mensaje_exitoso);
 
 
 
