@@ -72,3 +72,5 @@ Route::get('/create', function () {
 })->name('create');
 
 Route::post('/update', 'OrgnzAuth\EditProfileController@edit');
+
+Route::post('/create_event', 'OrgnzAuth\CreateEventController@create_event');

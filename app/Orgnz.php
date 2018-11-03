@@ -40,4 +40,9 @@ class Orgnz extends Authenticatable
     {
         $this->notify(new OrgnzResetPassword($token));
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

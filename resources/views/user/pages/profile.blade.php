@@ -32,7 +32,7 @@
                 <div class="row">
                     <div class="col-md-12">
 
-                        <form method="POST" action="{{url('/user/update')}}">
+                        <form method="POST" action="{{url('/orgnz/update')}}">
                             {{ csrf_field() }}
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light" name="new_user_name"  value="{{ Auth::user()->name }}"><br>
