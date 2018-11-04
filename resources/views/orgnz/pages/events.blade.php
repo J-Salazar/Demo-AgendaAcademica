@@ -25,20 +25,32 @@
             </div><!-- /.container-fluid -->
         </section>
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-12">
-
-                    </div>
-                    <!-- /.col -->
-
-                </div>
-                <!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+        <div class="table-responsive ">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Título</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach($events as $event)
+                        <tr>
+                            <th scope="row">{{ $event->id }}</th>
+                            <td>{{ $event->title }}</td>
+                            <td>{{ $event->description }}</td>
+                            <td>{{ $event->event_date }}</td>
+                            <td><a href="{{url('orgnz/'.$orgnz_id.'/event/'.$event->id)}}">Editar</a></td>
+                            <td><a href="#">Eliminar</a></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <!-- /.content-wrapper -->
 @endsection

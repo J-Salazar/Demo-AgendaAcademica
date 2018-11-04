@@ -15,7 +15,7 @@ class CreateEventController extends Controller
     public function create_event(Request $request){
 
         $orgnz_id = Auth::user()->id;
-        $orgnz = App\User::Find($orgnz_id);
+        $orgnz = App\Orgnz::Find($orgnz_id);
         $mensaje_exitoso = "";
 
         $request->validate([
@@ -47,7 +47,6 @@ class CreateEventController extends Controller
         $mensaje_exitoso = "Evento creado satisfactoriamente";
 
         return redirect('orgnz/create')->with('mensaje_exitoso',$mensaje_exitoso);
-
 
 
     }

@@ -71,16 +71,17 @@ Route::get('/create', function () {
     return view('orgnz.pages.create');
 })->name('create');
 
-Route::get('/events', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('orgnz')->user();
-
-    //dd($users);
-
-    return view('orgnz.pages.events');
-})->name('events');
-
 Route::post('/update', 'OrgnzAuth\EditProfileController@edit');
 
+Route::get('/events', 'OrgnzAuth\ListEventController@list_event')->name('events');
+
 Route::post('/create_event', 'OrgnzAuth\CreateEventController@create_event');
+
+Route::get('/{orgnz_id}/event/{event_id}', 'OrgnzAuth\ListEventController@edit_event');
+
+Route::post('/event/{event_id}/update', 'OrgnzAuth\ListEventController@update_event');
+
+Route::get('/event/{event_id}/update', function ($event_id){
+    $orgnz_id = Event::Find($event_id);
+    return redirect('orgnz'.$orgnz_id.'/event/'.$event_id);
+});
