@@ -43,4 +43,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Orgnz::class);
     }
+
+    public function events()
+    {
+        return $this -> belongsToMany('App\Event')
+                        -> withPivot('interest');
+    }
 }

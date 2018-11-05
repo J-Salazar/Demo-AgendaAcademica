@@ -10,25 +10,9 @@ Route::get('/home', function () {
     return view('user.home');
 })->name('home');
 
-Route::get('/attend', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('user')->user();
+Route::get('/attend', 'UserAuth\ActionController@attend')->name('attend');
 
-    //dd($users);
-
-    return view('user.pages.attend');
-})->name('attend');
-
-Route::get('/interest', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('user')->user();
-
-    //dd($users);
-
-    return view('user.pages.interest');
-})->name('interest');
+Route::get('/interest', 'UserAuth\ActionController@interest')->name('interest');
 
 Route::get('/profile', function () {
     $users[] = Auth::user();
@@ -61,3 +45,12 @@ Route::get('/schedule', function () {
 })->name('schedule');
 
 Route::post('/update', 'UserAuth\EditProfileController@edit');
+
+Route::get('/{user_id}/event_move/{event_id}/{interest}',
+    'UserAuth\ActionController@move');
+
+Route::get('/list', 'UserAuth\ActionController@list');
+
+Route::get('/{user_id}/event_save/{event_id}/{interest?}',
+            'UserAuth\ActionController@saveas'
+    );

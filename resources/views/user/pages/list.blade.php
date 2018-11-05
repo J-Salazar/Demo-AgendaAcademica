@@ -3,11 +3,11 @@
 @section('menu-eventos','menu-open')
 @section('eventos-activo','100%')
 @section('link-eventos','active')
-@section('link-meinteresa','active')
-@section('meinteresa-activo','100%')
+@section('link-todos','active')
+@section('todos-activo','100%')
 
 
-@section('estilo-meinteresa')
+@section('estilo-todos')
     background-color: black;
     color: white;
 
@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Asistiré</h1>
+                        <h1>Eventos</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -36,28 +36,25 @@
                     <th scope="col">Fecha</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                @if($events->isempty() )
-                    <td colspan="6" class="text-center">No se encontró ningún evento</td>
-                @else
-                    @foreach($events as $event)
-                        <tr>
+                @foreach($events as $event)
+                    <tr>
+                        <th scope="row">{{ $event->id }}</th>
+                        <td>{{ $event->title }}</td>
+                        <td>{{ $event->description }}</td>
+                        <td>{{ $event->event_date }}</td>
+                        <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
+                            >Me interesa</a></td>
 
-                            <th scope="row">{{ $event->id }}</th>
-                            <td>{{ $event->title }}</td>
-                            <td>{{ $event->description }}</td>
-                            <td>{{ $event->event_date }}</td>
-                            <td><a href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/asistire')}}"
-                                >Mover a Me interesa</a>
-                            </td>
-                            <td><a href="#">Eliminar</a></td>
+                        <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
+                            >Asistiré</a></td>
 
-                        </tr>
-                    @endforeach
-                @endif
-
+                        <td><a href="#">Eliminar</a></td>
+                    </tr>
+                @endforeach
                 </tbody>
             </table>
         </div>

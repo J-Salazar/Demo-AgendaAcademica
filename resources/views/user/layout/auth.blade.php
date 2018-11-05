@@ -180,6 +180,18 @@
                                     </a>
                                     <ul class="nav nav-treeview ml-3">
                                         <li class="nav-item">
+                                            <a href="{{ url('user/list') }}" class="nav-link @yield('link-todos')"
+                                               style=" @yield('estilo-todos')"
+                                            >
+
+                                                <img src="{{asset('open-iconic-master/png/magnifying-glass-2x.png')}}"
+                                                     style="filter: invert(@yield('todos-activo','10%'));
+                                                             "
+                                                >
+                                                <p>Todos los eventos</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
                                             <a href="{{ url('user/interest') }}" class="nav-link @yield('link-meinteresa')"
                                                style="@yield('estilo-meinteresa')"
                                             >

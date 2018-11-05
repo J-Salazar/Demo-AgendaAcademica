@@ -15,4 +15,10 @@ class Event extends Model
     {
         return $this -> belongsTo('App\Orgnz', 'orgnz_id');
     }
+
+    public function users()
+    {
+        return $this -> belongsToMany('App\User')
+                            -> withPivot('interest');
+    }
 }
