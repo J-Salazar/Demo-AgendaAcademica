@@ -23,7 +23,8 @@ class CreateEventsTable extends Migration
             $table->string('description');
             $table->string('site');
             $table->string('tag');
-            $table->timestamp('event_date');
+            $table->timestamp('init_date');
+            $table->timestamp('end_date');
 
             $table->timestamps();
         });

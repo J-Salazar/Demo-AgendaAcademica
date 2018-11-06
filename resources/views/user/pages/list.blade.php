@@ -33,7 +33,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Título</th>
                     <th scope="col">Descripción</th>
-                    <th scope="col">Fecha</th>
+                    <th scope="col" >Duracion</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -45,7 +45,7 @@
                         <th scope="row">{{ $event->id }}</th>
                         <td>{{ $event->title }}</td>
                         <td>{{ $event->description }}</td>
-                        <td>{{ $event->event_date }}</td>
+                        <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
                         <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
                             >Me interesa</a></td>
 

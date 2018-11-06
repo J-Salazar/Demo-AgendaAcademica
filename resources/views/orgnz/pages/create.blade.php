@@ -65,7 +65,7 @@
                                 <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
                             @endif
 
-                            <p class="card-title">Fecha del evento</p>
+                            <p class="card-title">Fecha de inicio del evento</p>
                             <input class="border-light w-100 rounded form-control"
                                    {{--value="{{ old('new_event_date') }}" --}}
                                    name="new_event_date"
@@ -75,6 +75,19 @@
                             ><br>
 
                             @if($errors->has('new_event_date'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
+                            <p class="card-title">Fecha de fin del evento</p>
+                            <input class="border-light w-100 rounded form-control"
+                                   {{--value="{{ old('new_event_date') }}" --}}
+                                   name="new_event_date_end"
+                                   type="datetime-local"
+                                   value="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:00"
+                                   id="example-datetime-local-input"
+                            ><br>
+
+                            @if($errors->has('new_event_date_end'))
                                 <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
                             @endif
 

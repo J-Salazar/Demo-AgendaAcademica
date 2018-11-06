@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
+
 
 class ActionController extends Controller
 {
@@ -82,11 +84,12 @@ class ActionController extends Controller
         if ($interest == 'interesa'){
             return redirect('/user/attend');
         }
-        if ($interest == 'asistire'){
+        elseif ($interest == 'asistire'){
             return redirect('/user/interest');
         }
-
-        
+        else {
+            return redirect(url(URL::previous()));
+        }
     }
 
     public function saveas($user_id, $event_id, $interest)
@@ -100,8 +103,18 @@ class ActionController extends Controller
 
         $user = User::Find($user_id);
 
-        $user->events()->attach([$event_id=>['interest'=>$interest] ]);
+        if( is_null(User::Find($curr_user_id)->events->find($event_id)) ) {
 
+            $user->events()->attach([$event_id => ['interest' => $interest]]);
+
+        } else{
+            User::Find($curr_user_id)->events
+                                    ->where('id',$event_id)
+                                    ->first()
+                                    ->pivot
+                                    ->update(['interest'=>$interest]);
+//            $user->events()->sync([$event_id => ['interest' => $interest]]);
+        }
 
         return redirect('/user/list');
     }
@@ -115,5 +128,16 @@ class ActionController extends Controller
                         ->with(['events' =>$events,
                                 'user_id'=>$user_id
                                 ]);
+    }
+
+    public function schedule()
+    {
+        $curr_user_id = Auth::user()->id;
+        $user = User::Find($curr_user_id);
+        $events = $user->events;
+
+
+        return view('user.pages.schedule')->with('events',$events);
+
     }
 }

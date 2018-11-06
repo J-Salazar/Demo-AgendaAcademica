@@ -8,7 +8,7 @@ class Event extends Model
 {
     //
     protected $fillable = [
-        'orgnz_id','title','description','site','tag','event_date',
+        'orgnz_id','title','description','site','tag','init_date','end_date',
     ];
 
     public function orgnzs()

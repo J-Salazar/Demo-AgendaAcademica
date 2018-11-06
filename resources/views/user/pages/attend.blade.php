@@ -49,9 +49,11 @@
                             <td>{{ $event->description }}</td>
                             <td>{{ $event->event_date }}</td>
                             <td><a href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/interesa')}}"
-                                >Mover a Asistiré</a>
+                                >Mover a Me interesa</a>
                             </td>
-                            <td><a href="#">Eliminar</a></td>
+                            <td><a href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/removido')}}"
+                                >Eliminar</a>
+                            </td>
 
                         </tr>
                     @endforeach

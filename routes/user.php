@@ -34,15 +34,7 @@ Route::get('/record', function () {
     return view('user.pages.record');
 })->name('record');
 
-Route::get('/schedule', function () {
-    $users[] = Auth::user();
-    $users[] = Auth::guard()->user();
-    $users[] = Auth::guard('user')->user();
-
-    //dd($users);
-
-    return view('user.pages.schedule');
-})->name('schedule');
+Route::get('/schedule', 'UserAuth\ActionController@schedule')->name('schedule');
 
 Route::post('/update', 'UserAuth\EditProfileController@edit');
 
