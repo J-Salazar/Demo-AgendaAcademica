@@ -25,13 +25,11 @@ class CreateEventController extends Controller
             'new_event_tag' => 'required',
             'new_event_date' => 'required',
         ]);
-//
-//        User::where('id',$id)->update([
-//                                        'name'      => $request->new_user_name,
-//                                        'last_name' => $request->new_user_last_name,
-//                                        'alias'     => $request->new_user_alias,
-//                                        'email'     => $request->new_user_email
-//        ]);
+
+
+        $request->new_event_date = str_replace('T',' ', $request->new_event_date);
+        $request->new_event_date = $request->new_event_date.':00';
+//        dd($request->new_event_date);
 
         $new_event = new Event;
 
