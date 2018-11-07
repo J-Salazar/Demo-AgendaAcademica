@@ -38,6 +38,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('dir') ? ' has-error' : '' }}">
+                            <label  class="col-md-4 control-label">Dirección de la institucion que representa</label>
+
+                            <div class="col-md-6">
+                                <input class="form-control" name="dir" value="{{ old('dir') }}">
+
+                                @if ($errors->has('dir'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('dir') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Telefono</label>
+
+                            <div class="col-md-6">
+                                <input class="form-control" type="number" name="phone" value="{{ old('phone') }}">
+
+                                @if ($errors->has('phone'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('phone') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
                             <label for="name" class="col-md-4 control-label">Nombre de usuario</label>
 

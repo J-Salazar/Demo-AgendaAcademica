@@ -43,7 +43,7 @@
                 @foreach($events as $event)
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
-                        <td>{{ $event->title }}</td>
+                        <td><a href="{{url('user/'.$event->id.'/info')}}">{{ $event->title }}</a></td>
                         <td>{{ $event->description }}</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
                         <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"

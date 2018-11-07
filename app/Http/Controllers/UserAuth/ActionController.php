@@ -140,4 +140,11 @@ class ActionController extends Controller
         return view('user.pages.schedule')->with('events',$events);
 
     }
+
+    public function eventinfo($event_id)
+    {
+        $event = Event::Find($event_id);
+
+        return view('user.pages.info')->with('event',$event);
+    }
 }

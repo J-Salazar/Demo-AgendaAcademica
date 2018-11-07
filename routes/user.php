@@ -46,3 +46,5 @@ Route::get('/list', 'UserAuth\ActionController@list');
 Route::get('/{user_id}/event_save/{event_id}/{interest?}',
             'UserAuth\ActionController@saveas'
     );
+
+Route::get('/{event_id}/info','UserAuth\ActionController@eventinfo');
