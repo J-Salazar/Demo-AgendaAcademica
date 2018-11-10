@@ -14,14 +14,14 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Calendar</h1>
+                        <h1>Mi agenda</h1>
                     </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Calendar</li>
-                        </ol>
-                    </div>
+                    {{--<div class="col-sm-6">--}}
+                        {{--<ol class="breadcrumb float-sm-right">--}}
+                            {{--<li class="breadcrumb-item"><a href="#">Home</a></li>--}}
+                            {{--<li class="breadcrumb-item active">Calendar</li>--}}
+                        {{--</ol>--}}
+                    {{--</div>--}}
                 </div>
             </div><!-- /.container-fluid -->
         </section>
@@ -90,16 +90,20 @@
                 m    = date.getMonth(),
                 y    = date.getFullYear()
             $('#calendar').fullCalendar({
+                monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+                monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+                dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+                dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
                 header    : {
                     left  : 'prev,next today',
                     center: 'title',
                     right : 'month,agendaWeek,agendaDay'
                 },
                 buttonText: {
-                    today: 'today',
-                    month: 'month',
-                    week : 'week',
-                    day  : 'day'
+                    today: 'hoy',
+                    month: 'mes',
+                    week : 'semana',
+                    day  : 'día'
                 },
                 //Random default events
                 events    : [@foreach($events as $event)
@@ -118,14 +122,14 @@
                                         parseInt('{{date_parse($event->end_date)["minute"]}}',10)
                                     ),
 
-                                    backgroundColor: '#f56954', //red
-                                    borderColor    : '#f56954' //red
+                                    backgroundColor: '#ff'+(Math.floor(Math.random() * 9000)+10).toString(10), //random color
+                                    borderColor    : '#000000'
                                 },
                             @endforeach
 
                 ],
-                editable  : true,
-                droppable : true, // this allows things to be dropped onto the calendar !!!
+                editable  : false,
+                droppable : false, // this allows things to be dropped onto the calendar !!!
                 drop      : function (date, allDay) { // this function is called when something is dropped
 
                     // retrieve the dropped element's stored Event Object
@@ -192,7 +196,10 @@
                 $('#new-event').val('')
             })
         })
+
     </script>
+
+
 
 
 @endsection

@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('last_name');
             $table->string('eap');
+            $table->string('my_tag')->nullable();
+            $table->string('sys_tag')->nullable();
             $table->string('alias')->unique();
             $table->string('code')->unique();
             $table->string('email')->unique();

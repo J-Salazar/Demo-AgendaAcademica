@@ -43,16 +43,33 @@
                 @foreach($events as $event)
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
-                        <td><a href="{{url('user/'.$event->id.'/info')}}">{{ $event->title }}</a></td>
+                        <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
                         <td>{{ $event->description }}</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
-                        <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
+
+                        @if($event->users->where('id',$user_id)->first()->pivot->interest == 'interesa')
+                        <td><a class="btn btn-outline-primary disabled text-dark" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
+                                >Me interesa</a></td>
+                            @else
+                        <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
                             >Me interesa</a></td>
+                        @endif
 
-                        <td><a href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
-                            >Asistiré</a></td>
+                        @if($event->users->where('id',$user_id)->first()->pivot->interest == 'asistire')
+                            <td><a class="btn btn-outline-primary disabled" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
+                                >Asistiré</a></td>
+                        @else
+                            <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
+                                >Asistiré</a></td>
+                        @endif
 
-                        <td><a href="#">Eliminar</a></td>
+                        @if($event->users->where('id',$user_id)->first()->pivot->interest != 'removido')
+                            <td><a class="btn btn-outline-danger" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/removido')}}"
+                                >Eliminar</a></td>
+                        @else
+                            <td></td>
+                        @endif
+
                     </tr>
                 @endforeach
                 </tbody>

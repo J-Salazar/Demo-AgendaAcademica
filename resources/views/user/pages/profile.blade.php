@@ -35,23 +35,75 @@
                         <form method="POST" action="{{url('/user/update')}}">
                             {{ csrf_field() }}
                             <p class="card-title">Nombres</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_name"  value="{{ Auth::user()->name }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_name"
+                                   value="{{ Auth::user()->name }}"><br>
+
                             <p class="card-title">Apellidos</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_last_name"  value="{{ Auth::user()->last_name }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_last_name"
+                                   value="{{ Auth::user()->last_name }}"><br>
+
                             <p class="card-title">Email</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_email"  value="{{ Auth::user()->email }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_email"
+                                   value="{{ Auth::user()->email }}"><br>
                             @if ($errors->has('new_user_email'))
                                 <span class="help-block">
                                         <strong>Email no válido</strong>
                                     </span>
                             @endif
+
+                            <p class="card-title">Escuela Academico Profesional</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_eap"
+                                   value="{{ Auth::user()->eap }}"><br>
+                            @if ($errors->has('new_user_eap'))
+                                <span class="help-block">
+                                        <strong>!</strong>
+                                    </span>
+                            @endif
+
+                            <p class="card-title">Codigo de alumno</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_code"
+                                   value="{{ Auth::user()->code }}"><br>
+                            @if ($errors->has('new_user_code'))
+                                <span class="help-block">
+                                        <strong>!</strong>
+                                    </span>
+                            @endif
+
+                            <p class="card-title">Telefono</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_phone"
+                                   value="{{ Auth::user()->phone }}"><br>
+                            @if ($errors->has('new_user_phone'))
+                                <span class="help-block">
+                                        <strong>!</strong>
+                                    </span>
+                            @endif
+
+                            <p class="card-title">Temas de interes</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_my_tag"
+                                   value="{{ Auth::user()->my_tag }}"><br>
+                            @if ($errors->has('new_user_my_tag'))
+                                <span class="help-block">
+                                        <strong>!</strong>
+                                    </span>
+                            @endif
+
                             <p class="card-title">Nombre de Usuario</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_user_alias"  value="{{ Auth::user()->alias }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_user_alias"
+                                   value="{{ Auth::user()->alias }}"><br>
                             @if ($errors->has('new_user_alias'))
                                 <span class="help-block">
                                         <strong>Nombre de usuario no válido</strong>
                                     </span>
                             @endif
+
                             <div class="modal-footer">
                             <button class="btn-primary" type="submit">Actualizar</button>
                             </div>

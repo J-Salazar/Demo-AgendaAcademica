@@ -4,6 +4,7 @@ namespace App\Http\Controllers\UserAuth;
 
 use App\Event;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,24 @@ class ActionController extends Controller
         $users[] = Auth::guard()->user();
         $users[] = Auth::guard('user')->user();
 
+    }
+
+    public function home()
+    {
+        $user_id = Auth::user()->id;
+        $user = User::Find($user_id);
+
+        $events = Event::all();
+
+//        dd($user->my_tag);
+        if (isset($user->my_tag)) {
+            $sug_events = Event::where('tag', 'LIKE', '%'.$user->my_tag.'%')->get();
+        }else{
+            $sug_events = [];
+        }
+        return view('user.home')
+                    ->with(['events'=>$sug_events,
+                            'user_id'=>$user_id]);
     }
 
     public function attend()
@@ -116,14 +135,21 @@ class ActionController extends Controller
 //            $user->events()->sync([$event_id => ['interest' => $interest]]);
         }
 
-        return redirect('/user/list');
+        return redirect(url(URL::previous()));
     }
 
     public function list()
     {
-        $events = DB::table('events')->get();
+//        $events = DB::table('events')->get();
+//        $user_id = Auth::user()->id;
+//
+//
+//        return view('user.pages.list')
+//                        ->with(['events' =>$events,
+//                                'user_id'=>$user_id
+//                                ]);
+        $events = Event::all();
         $user_id = Auth::user()->id;
-
         return view('user.pages.list')
                         ->with(['events' =>$events,
                                 'user_id'=>$user_id
@@ -141,10 +167,22 @@ class ActionController extends Controller
 
     }
 
+    public function record()
+    {
+        $user_id = Auth::user()->id;
+        $user = User::Find($user_id);
+
+        $events = $user->events->where('end_date','<',Carbon::now());
+//        dd($events);
+        return view('user.pages.record')->with('events',$events);
+    }
+
     public function eventinfo($event_id)
     {
         $event = Event::Find($event_id);
 
         return view('user.pages.info')->with('event',$event);
     }
+    
+    
 }
