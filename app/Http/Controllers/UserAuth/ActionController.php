@@ -160,7 +160,7 @@ class ActionController extends Controller
     {
         $curr_user_id = Auth::user()->id;
         $user = User::Find($curr_user_id);
-        $events = $user->events;
+        $events = $user->events()->wherePivot('interest','LIKE','%a%')->get();
 
 
         return view('user.pages.schedule')->with('events',$events);

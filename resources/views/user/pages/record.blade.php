@@ -38,14 +38,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                @if($events == null )
+                @if( $events->first == null )
                     <td colspan="6" class="text-center">No hay eventos</td>
                 @else
                 @foreach($events as $event)
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
-                        <td>{{ strip_tags( $event->description )}}</td>
+                        <td>{{ substr(strip_tags( $event->description ),0,40)}}...</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
 
                         {{--@if($event->users->where('id',$user_id)->first()->pivot->interest == 'interesa')--}}

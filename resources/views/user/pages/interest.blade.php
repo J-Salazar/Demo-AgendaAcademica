@@ -20,7 +20,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Asistiré</h1>
+                        <h1>Me interesan</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -47,7 +47,7 @@
 
                             <th scope="row">{{ $event->id }}</th>
                             <td>{{ $event->title }}</td>
-                            <td>{{ strip_tags($event->description) }}</td>
+                            <td>{{ substr(strip_tags($event->description),0,40) }}...</td>
                             <td>{{ $event->event_date }}</td>
 {{--                            @if($event->pivot->interest == 'interesa')--}}
                             <td><a class="btn btn-outline-info" href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/asistire')}}"

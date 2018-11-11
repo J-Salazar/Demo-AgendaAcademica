@@ -84,7 +84,7 @@
                                    id="example-datetime-local-input"
                             ><br>
 
-                            @if($errors->has('new_event_init_date'))
+                            @if($errors->has('new_event_date'))
                                 <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
                             @endif
 

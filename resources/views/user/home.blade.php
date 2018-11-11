@@ -5,6 +5,7 @@
 
 
 @section('contenido')
+
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -17,10 +18,8 @@
             </div><!-- /.container-fluid -->
         </section>
 
-        <div class="table-responsive container-fluid">
-            <table id="dtBasicExample table table-hover"
-                   class="table table-striped table-bordered table-sm"
-                   cellspacing="0" width="100%">
+        <div class="card-body">
+            <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -46,7 +45,7 @@
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
-                        <td>{{ $event->description }}</td>
+                        <td>{{ substr(strip_tags($event->description),0,40) }}...</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
                         @if(is_null($event->users()->wherePivot('interest','=','interesa')->first()))
                             <td><a class="btn btn-outline-info"
@@ -97,4 +96,28 @@
 
 
 
+@endsection
+
+@section('calendariojs')
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        {{--var dataSet = [--}}
+            {{--@foreach($events as $event)--}}
+                {{--[--}}
+                    {{--"{{$event->title}}",--}}
+                {{--]--}}
+            {{--@endforeach--}}
+        {{--];--}}
+
+        {{--$(document).ready(function() {--}}
+            {{--$('#example').DataTable( {--}}
+                {{--data: dataSet,--}}
+                {{--columns: [--}}
+                    {{--{ data: "Name" }--}}
+
+                {{--]--}}
+            {{--} );--}}
+        {{--} );--}}
+    </script>
 @endsection

@@ -46,7 +46,7 @@
 
                             <th scope="row">{{ $event->id }}</th>
                             <td>{{ $event->title }}</td>
-                            <td>{{ strip_tags($event->description) }}</td>
+                            <td>{{ substr(strip_tags($event->description),0,40) }}...</td>
                             <td>{{ $event->event_date }}</td>
                             <td><a class="btn btn-outline-info"
                                    href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/interesa')}}"
@@ -170,6 +170,11 @@
                 ],
                 editable  : false,
                 droppable : false, // this allows things to be dropped onto the calendar !!!
+                eventClick: function(event) {
+                    // opens events in a popup window
+                    window.open(event.url, 'gcalevent', 'width=700,height=600');
+                    return false;
+                },
                 drop      : function (date, allDay) { // this function is called when something is dropped
 
                     // retrieve the dropped element's stored Event Object

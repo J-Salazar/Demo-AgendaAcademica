@@ -51,6 +51,7 @@ class ListEventController extends Controller
         $users[] = Auth::guard('orgnz')->user();
 
         $event = Event::Find($event_id);
+        $orgnz_id = Auth::user()->id;
 
         $request->validate([
             'new_event_title' => 'required',
@@ -66,13 +67,13 @@ class ListEventController extends Controller
         $event->site       = $request->new_event_site;
         $event->tag        = $request->new_event_tag;
         $event->init_date = $request->new_event_date;
-        $event->end_date = $request->new_event_end_date;
+        $event->end_date = $request->new_event_date_end;
 
 
         $event -> save();
 
         $mensaje = 'Evento actualizado';
-        return view('orgnz.pages.edit')->with(['mensaje'=>$mensaje,'event'=>$event]);
-
+//        return view('orgnz.pages.edit')->with(['mensaje'=>$mensaje,'event'=>$event]);
+        return redirect(url('orgnz/'.$orgnz_id.'/event/'.$event_id))->with(['mensaje'=>$mensaje,'event'=>$event]);
     }
 }
