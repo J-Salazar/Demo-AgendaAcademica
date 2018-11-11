@@ -44,8 +44,17 @@ class OrgnzResetPassword extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('You are receiving this email because we received a password reset request for your account.')
-            ->action('Reset Password', url('orgnz/password/reset', $this->token))
-            ->line('If you did not request a password reset, no further action is required.');
+            ->salutation('Atentamente')
+//            ->greeting('Hello!')
+            ->greeting('Saludos ')
+//            ->line('You are receiving this email because we received a password reset request for your account.')
+            ->line('Has recibido este correo porque hemos recibido una solicitud de reinicio de contraseña desde tu cuenta.')
+//            ->action('Reset Password', url('orgnz/password/reset', $this->token))
+            ->action('Reiniciar Contraseña', url('orgnz/password/reset', $this->token))
+//            ->line('If you did not request a password reset, no further action is required.');
+            ->line('Si no solicitaste un reinicio de contraseña, omitir este mensaje.');
+
+//            ->actionText("Si experimentas problemas al oprimir el botón \":actionText\", copia y pega la siguiente dirección\n".
+//                'en tu navegador web: ');
     }
 }
