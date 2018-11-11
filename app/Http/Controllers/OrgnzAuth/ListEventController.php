@@ -58,13 +58,15 @@ class ListEventController extends Controller
             'new_event_site' => 'required',
             'new_event_tag' => 'required',
             'new_event_date' => 'required',
+            'new_event_date_end' => 'required',
         ]);
 
         $event->title      = $request->new_event_title;
         $event->description= $request->new_event_description;
         $event->site       = $request->new_event_site;
         $event->tag        = $request->new_event_tag;
-        $event->event_date = $request->new_event_date;
+        $event->init_date = $request->new_event_date;
+        $event->end_date = $request->new_event_end_date;
 
 
         $event -> save();

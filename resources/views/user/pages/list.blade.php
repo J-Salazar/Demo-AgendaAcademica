@@ -44,7 +44,7 @@
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
-                        <td>{{ $event->description }}</td>
+                        <td>{{ strip_tags($event->description) }}</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
 
                         @if($event->users->where('id',$user_id)->first() == null)

@@ -34,44 +34,42 @@
                     <th scope="col">Título</th>
                     <th scope="col">Descripción</th>
                     <th scope="col" >Duracion</th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+
                 </tr>
                 </thead>
                 <tbody>
-                @if($events->isempty() )
+                @if($events == null )
                     <td colspan="6" class="text-center">No hay eventos</td>
                 @else
-                @foreach($events->wherePivot('interest','asistire') as $event)
+                @foreach($events as $event)
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
-                        <td>{{ $event->description }}</td>
+                        <td>{{ strip_tags( $event->description )}}</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
 
-                        @if($event->users->where('id',$user_id)->first()->pivot->interest == 'interesa')
-                            <td><a class="btn btn-outline-primary disabled text-dark" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
-                                >Me interesa</a></td>
-                        @else
-                            <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
-                                >Me interesa</a></td>
-                        @endif
+                        {{--@if($event->users->where('id',$user_id)->first()->pivot->interest == 'interesa')--}}
+                            {{--<td><a class="btn btn-outline-primary disabled text-dark" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"--}}
+                                {{-->Me interesa</a></td>--}}
+                        {{--@else--}}
+                            {{--<td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"--}}
+                                {{-->Me interesa</a></td>--}}
+                        {{--@endif--}}
 
-                        @if($event->users->where('id',$user_id)->first()->pivot->interest == 'asistire')
-                            <td><a class="btn btn-outline-primary disabled" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
-                                >Asistiré</a></td>
-                        @else
-                            <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
-                                >Asistiré</a></td>
-                        @endif
+                        {{--@if($event->users->where('id',$user_id)->first()->pivot->interest == 'asistire')--}}
+                            {{--<td><a class="btn btn-outline-primary disabled" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"--}}
+                                {{-->Asistiré</a></td>--}}
+                        {{--@else--}}
+                            {{--<td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"--}}
+                                {{-->Asistiré</a></td>--}}
+                        {{--@endif--}}
 
-                        @if($event->users->where('id',$user_id)->first()->pivot->interest != 'removido')
-                            <td><a class="btn btn-outline-danger" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/removido')}}"
-                                >Eliminar</a></td>
-                        @else
-                            <td></td>
-                        @endif
+                        {{--@if($event->users->where('id',$user_id)->first()->pivot->interest != 'removido')--}}
+                            {{--<td><a class="btn btn-outline-danger" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/removido')}}"--}}
+                                {{-->Eliminar</a></td>--}}
+                        {{--@else--}}
+                            {{--<td></td>--}}
+                        {{--@endif--}}
 
                     </tr>
                 @endforeach

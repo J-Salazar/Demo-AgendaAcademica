@@ -61,7 +61,7 @@
             <div class="col-lg-12 card-body">
                 <h3 class="text-xl"> Descripción</h3>
                 <p>
-                    {{ $event -> description }}
+                    {!!   $event -> description !!}
                 </p>
             </div>
         </div>
@@ -144,7 +144,7 @@
                     <!-- Content -->
                     <h6 class="text-uppercase font-weight-bold">Descripción</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                    <p>{{ $event->orgnzs->desc }}</p>
+                    <p>{!!  $event->orgnzs->desc !!}</p>
 
                 </div>
                 <!-- Grid column -->

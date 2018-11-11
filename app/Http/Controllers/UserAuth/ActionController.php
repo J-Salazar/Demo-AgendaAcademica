@@ -171,10 +171,10 @@ class ActionController extends Controller
     {
         $user_id = Auth::user()->id;
         $user = User::Find($user_id);
-
-        $events = $user->events->where('end_date','<',Carbon::now());
+        $events = $user->events()->where('end_date','<',Carbon::now())->wherePivot('interest','asistire')->get();
+//        $events = $user->events();
 //        dd($events);
-        return view('user.pages.record')->with('events',$events);
+        return view('user.pages.record')->with(['events'=>$events, 'user_id'=>$user_id]);
     }
 
     public function eventinfo($event_id)

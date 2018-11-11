@@ -46,7 +46,7 @@
 
                             <th scope="row">{{ $event->id }}</th>
                             <td>{{ $event->title }}</td>
-                            <td>{{ $event->description }}</td>
+                            <td>{{ strip_tags($event->description) }}</td>
                             <td>{{ $event->event_date }}</td>
                             <td><a class="btn btn-outline-info"
                                    href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/interesa')}}"
@@ -161,15 +161,15 @@
                         parseInt('{{date_parse($event->end_date)["hour"]}}',10),
                         parseInt('{{date_parse($event->end_date)["minute"]}}',10)
                     ),
-
+                    url : '{{url('user/'.$event->id.'/info')}}',
                     backgroundColor: '#ff'+(Math.floor(Math.random() * 9000)+10).toString(10), //random color
                     borderColor    : '#000000'
                 },
                     @endforeach
 
                 ],
-                editable  : true,
-                droppable : true, // this allows things to be dropped onto the calendar !!!
+                editable  : false,
+                droppable : false, // this allows things to be dropped onto the calendar !!!
                 drop      : function (date, allDay) { // this function is called when something is dropped
 
                     // retrieve the dropped element's stored Event Object

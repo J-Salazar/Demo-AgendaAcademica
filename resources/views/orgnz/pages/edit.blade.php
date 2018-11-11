@@ -13,6 +13,7 @@
 @endsection
 
 @section('contenido')
+
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -74,11 +75,29 @@
 
 
 
-                            <p class="card-title">Fecha</p>
-                            <input class="border-light w-100 rounded "
+                            <p class="card-title">Fecha de inicio del evento</p>
+                            <input class="border-light w-100 rounded form-control"
+                                   {{--value="{{ old('new_event_date') }}" --}}
                                    name="new_event_date"
-                                   value="{{ $event->event_date  }}"><br>
-                            @if($errors->has('new_event_date'))
+                                   type="datetime-local"
+                                   value="{{strtok($event->init_date,' ')}}T{{trim(strstr($event->init_date,' '))}}"
+                                   id="example-datetime-local-input"
+                            ><br>
+
+                            @if($errors->has('new_event_init_date'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
+                            <p class="card-title">Fecha de fin del evento</p>
+                            <input class="border-light w-100 rounded form-control"
+                                   {{--value="{{ old('new_event_init_date') }}" --}}
+                                   name="new_event_date_end"
+                                   type="datetime-local"
+                                   value="{{strtok($event->end_date,' ')}}T{{trim(strstr($event->end_date,' '))}}"
+                                   id="example-datetime-local-input"
+                            ><br>
+
+                            @if($errors->has('new_event_date_end'))
                                 <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
                             @endif
 
