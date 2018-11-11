@@ -47,6 +47,14 @@
                         <td>{{ $event->description }}</td>
                         <td>{{ $event->init_date }} -- {{ $event->end_date }}</td>
 
+                        @if($event->users->where('id',$user_id)->first() == null)
+                            <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
+                                >Me interesa</a></td>
+                            <td><a class="btn btn-outline-primary" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/asistire')}}"
+                                >Asistiré</a></td>
+                            <td></td>
+                        @else
+
                         @if($event->users->where('id',$user_id)->first()->pivot->interest == 'interesa')
                         <td><a class="btn btn-outline-primary disabled text-dark" href="{{url('user/'.$user_id.'/event_save/'.$event->id.'/interesa')}}"
                                 >Me interesa</a></td>
@@ -69,7 +77,7 @@
                         @else
                             <td></td>
                         @endif
-
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>

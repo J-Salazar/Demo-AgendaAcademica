@@ -25,15 +25,7 @@ class EditProfileController extends Controller
             'new_user_eap'           =>  'required',
             'new_user_code'          =>  'required',
             'new_user_phone'         =>  'required',
-//            'new_user_my_tag'        =>  'required',
         ]);
-//
-//        User::where('id',$id)->update([
-//                                        'name'      => $request->new_user_name,
-//                                        'last_name' => $request->new_user_last_name,
-//                                        'alias'     => $request->new_user_alias,
-//                                        'email'     => $request->new_user_email
-//        ]);
 
         $current = User::Find($id);
 
