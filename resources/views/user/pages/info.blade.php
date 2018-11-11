@@ -85,9 +85,9 @@
 
     </div>
     <!-- Footer -->
-    <footer class="page-footer font-small " style="background-color: rgba(244, 67, 54, 0.1);">
+    <footer class="page-footer font-small " style="background-color: #838fbd;">
 
-        <div style="background-color: #bd6b79;">
+        <div style="background-color: #5866e1;">
             <div class="container">
 
                 <!-- Grid row-->
@@ -154,7 +154,7 @@
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                    <h6 class="text-uppercase font-weight-bold">Contacto</h6>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
                         <i class="fa fa-home mr-3"></i> {{ $event->orgnzs->dir }}</p>

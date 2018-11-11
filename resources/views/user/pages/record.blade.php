@@ -1,5 +1,9 @@
 @extends('user.layout.auth')
 
+@section('datatablecss')
+    <link rel="stylesheet" href="{{asset('templates/plugins/datatables/dataTables.bootstrap4.css')}}">
+@endsection
+
 @section('menu-eventos','menu-open')
 @section('eventos-activo','100%')
 @section('link-eventos','active')
@@ -27,7 +31,7 @@
         </section>
 
         <div class="table-responsive ">
-            <table class="table table-hover">
+            <table id="example1" class="table table-hover">
                 <thead>
                 <tr>
                     <th scope="col">id</th>
@@ -79,4 +83,19 @@
         </div>
     </div>
     <!-- /.content-wrapper -->
+@endsection
+
+@section('datatablejs')
+    <script src="{{asset('templates/plugins/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('templates/plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+@endsection
+
+@section('calendariojs')
+
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+    </script>
+
 @endsection

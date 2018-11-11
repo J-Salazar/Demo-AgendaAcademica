@@ -1,5 +1,9 @@
 @extends('orgnz.layout.auth')
 
+@section('datatablecss')
+    <link rel="stylesheet" href="{{asset('templates/plugins/datatables/dataTables.bootstrap4.css')}}">
+@endsection
+
 @section('menu-eventos','menu-open')
 @section('link-eventos','active')
 @section('link-mis-eventos','active')
@@ -38,6 +42,14 @@
                 </tr>
                 </thead>
                 <tbody>
+                    @if($events->first() == null)
+                        <tr>
+                            <td>
+                                No ha registrado ningún evento
+                            </td>
+                        </tr>
+                    @else
+
                     @foreach($events as $event)
                         <tr>
                             <th scope="row">{{ $event->id }}</th>
@@ -48,9 +60,25 @@
                             <td><a href="#">Eliminar</a></td>
                         </tr>
                     @endforeach
+                    @endif
                 </tbody>
             </table>
         </div>
     </div>
     <!-- /.content-wrapper -->
+@endsection
+
+@section('datatablejs')
+    <script src="{{asset('templates/plugins/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('templates/plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+@endsection
+
+@section('calendariojs')
+
+    <script>
+        $(function () {
+            $("#example1").DataTable();
+        });
+    </script>
+
 @endsection

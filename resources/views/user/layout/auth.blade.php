@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    {{--Datatable--}}
+    @yield('datatablecss')
     <!-- fullCalendar 2.2.5-->
     <link rel="stylesheet" href="{{asset('templates/plugins/fullcalendar/fullcalendar.min.css')}}">
     <link rel="stylesheet" href="{{asset('templates/plugins/fullcalendar/fullcalendar.print.css')}}" media="print">
@@ -98,7 +100,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="{{url('user/home')}}" class="nav-link">Home</a>
+                        <a href="{{url('user/home')}}" class="nav-link">Inicio</a>
                     </li>
 
                 </ul>
@@ -118,12 +120,12 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Messages Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#" >
-                            <img src="{{asset('open-iconic-master/png/bell-2x.png')}}" >
-                        </a>
+                    {{--<li class="nav-item dropdown">--}}
+                        {{--<a class="nav-link" data-toggle="dropdown" href="#" >--}}
+                            {{--<img src="{{asset('open-iconic-master/png/bell-2x.png')}}" >--}}
+                        {{--</a>--}}
 
-                    </li>
+                    {{--</li>--}}
                     <!-- Notifications Dropdown Menu -->
 
                 </ul>
@@ -235,7 +237,7 @@
                                         >
                                         <p>
                                             Mi agenda
-                                            <span class="badge badge-info right">2</span>
+                                            {{--<span class="badge badge-info right">2</span>--}}
                                         </p>
                                     </a>
                                 </li>
@@ -302,6 +304,8 @@
     <script src="{{asset('templates/plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{asset('templates/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    {{--Datatables--}}
+    @yield('datatablejs')
     <!-- jQuery UI 1.11.4 -->
     <script src="{{asset('templates/plugins/jQueryUI/jquery-ui.min.js')}}"></script>
     <!-- Slimscroll -->
