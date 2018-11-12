@@ -1,5 +1,10 @@
 @extends('user.layout.auth')
 
+@section('datatablecss')
+    <link rel="stylesheet" href="{{asset('templates/plugins/datatables/dataTables.bootstrap4.css')}}">
+@endsection
+
+
 @section('link-inicio','active')
 @section('inicio-activo','100%')
 
@@ -18,17 +23,17 @@
             </div><!-- /.container-fluid -->
         </section>
 
-        <div class="card-body">
-            <table id="example1" class="table table-bordered table-striped">
+        <div class="table-responsive ">
+            <table id="example1" class="table table-hover">
                 <thead>
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Título</th>
                     <th scope="col">Descripción</th>
                     <th scope="col" >Duracion</th>
-                    <th scope="col" colspan="3"></th>
-                    {{--<th scope="col"></th>--}}
-                    {{--<th scope="col"></th>--}}
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -98,26 +103,16 @@
 
 @endsection
 
+@section('datatablejs')
+    <script src="{{asset('templates/plugins/datatables/jquery.dataTables.js')}}"></script>
+    <script src="{{asset('templates/plugins/datatables/dataTables.bootstrap4.js')}}"></script>
+@endsection
+
 @section('calendariojs')
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+
     <script>
-        {{--var dataSet = [--}}
-            {{--@foreach($events as $event)--}}
-                {{--[--}}
-                    {{--"{{$event->title}}",--}}
-                {{--]--}}
-            {{--@endforeach--}}
-        {{--];--}}
-
-        {{--$(document).ready(function() {--}}
-            {{--$('#example').DataTable( {--}}
-                {{--data: dataSet,--}}
-                {{--columns: [--}}
-                    {{--{ data: "Name" }--}}
-
-                {{--]--}}
-            {{--} );--}}
-        {{--} );--}}
+        $(function () {
+            $("#example1").DataTable();
+        });
     </script>
 @endsection
