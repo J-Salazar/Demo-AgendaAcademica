@@ -100,7 +100,7 @@
                         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="{{url('orgnz/home')}}" class="nav-link">Home</a>
+                        <a href="{{url('orgnz/home')}}" class="nav-link">Inicio</a>
                     </li>
 
                 </ul>
@@ -120,12 +120,12 @@
                 <!-- Right navbar links -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Messages Dropdown Menu -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" data-toggle="dropdown" href="#" >
-                            <img src="{{asset('open-iconic-master/png/bell-2x.png')}}" >
-                        </a>
+                    {{--<li class="nav-item dropdown">--}}
+                        {{--<a class="nav-link" data-toggle="dropdown" href="#" >--}}
+                            {{--<img src="{{asset('open-iconic-master/png/bell-2x.png')}}" >--}}
+                        {{--</a>--}}
 
-                    </li>
+                    {{--</li>--}}
                     <!-- Notifications Dropdown Menu -->
 
                 </ul>
@@ -248,7 +248,7 @@
                                         >
                                         <p>
                                             Mi agenda
-                                            <span class="badge badge-info right">2</span>
+                                            {{--<span class="badge badge-info right">2</span>--}}
                                         </p>
                                     </a>
                                 </li>
