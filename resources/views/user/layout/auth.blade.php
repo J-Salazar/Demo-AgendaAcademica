@@ -80,6 +80,14 @@
                                     <p>Registrarse como Usuario</p>
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/orgnz/register') }}" class="nav-link">
+                                    <img src="{{asset('open-iconic-master/png/caret-right.png')}}"
+                                         style="filter: invert(90%);"
+                                    >
+                                    <p>Registrarse como Organizador</p>
+                                </a>
+                            </li>
                         </ul>
                     </ul>
 
@@ -284,17 +292,28 @@
     <!-- ./wrapper -->
     @if(Auth::guest())
     <!-- Footer -->
-    <footer class="main-footer fixed-bottom ml-0 text-white" style="background-color: #0d47a1!important;position: absolute;bottom: @yield('espacio')%;" >
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
-            <a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">
-                <strong>Agenda Académica</strong>
-            </a>
-        </div>
-        <!-- Copyright -->
-
+    <!-- Footer -->
+    <footer class="page-footer font-small bg-info ">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">
+        <strong>Agenda Académica</strong>
+        </a>
+    </div>
+    <!-- Copyright -->
     </footer>
+    {{----}}
+    {{--<footer class="main-footer fixed-bottom ml-0 text-white" style="background-color: #0d47a1!important; margin: 0;height: 10%; ;position: absolute;bottom: @yield('espacio')%;" >--}}
+
+        {{--<!-- Copyright -->--}}
+        {{--<div class="footer-copyright text-center py-3">© 2018 Copyright:--}}
+            {{--<a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">--}}
+                {{--<strong>Agenda Académica</strong>--}}
+            {{--</a>--}}
+        {{--</div>--}}
+        {{--<!-- Copyright -->--}}
+
+    {{--</footer>--}}
     <!-- Footer -->
     @endif
 
