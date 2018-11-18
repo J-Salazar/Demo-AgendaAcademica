@@ -96,7 +96,7 @@
                             <label for="code" class="col-md-4 control-label">Código de alumno</label>
 
                             <div class="col-md-6">
-                                <input id="code" class="form-control" name="code" value="{{ old('code') }}">
+                                <input id="code" type="tel" class="form-control" name="code" value="{{ old('code') }}">
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
@@ -112,7 +112,7 @@
                             <label for="phone" class="col-md-4 control-label">Teléfono</label>
 
                             <div class="col-md-6">
-                                <input id="phone" class="form-control" name="phone" value="{{ old('phone') }}">
+                                <input id="phone" type="tel" maxlength="9" class="form-control" name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

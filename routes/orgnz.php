@@ -65,6 +65,8 @@ Route::get('/{orgnz_id}/event/{event_id}', 'OrgnzAuth\ListEventController@edit_e
 
 Route::post('/event/{event_id}/update', 'OrgnzAuth\ListEventController@update_event');
 
+Route::get('/{event_id}/info','UserAuth\ActionController@eventinfo');
+
 //Route::get('/event/{event_id}/update', function ($event_id){
 //    $orgnz_id = Event::Find($event_id);
 //    return redirect('orgnz'.$orgnz_id.'/event/'.$event_id);

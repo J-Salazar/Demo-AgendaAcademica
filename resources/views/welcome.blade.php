@@ -159,9 +159,9 @@
     <section class="my-5">
 
         <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold text-center my-5">Why is it so great?</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Por qué nuestra plataforma es mejor?</h2>
         <!-- Section description -->
-        <p class="lead grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p class="lead grey-text text-center w-responsive mx-auto mb-5">Contamos con la mejor forma de poder hacer que sus eventos, exposiciones o conferencias lleguen a mas personas interesadas a través de nuestra plataforma debido a la interactividad y a sus características que presenta.</p>
 
         <!-- Grid row -->
         <div class="row">
@@ -181,8 +181,8 @@
                     <!-- Grid column -->
                     <div class="col-lg-10 col-md-9 col-10">
                         <h4 class="font-weight-bold">Marketing</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <a class="btn btn-primary btn-sm">Learn more</a>
+                        <p class="grey-text">Las publicaciones van dirigidas por aficiones o gustos, así se filtrará e irá directo a las personas mucho mas interesadas, consiguiendo a más para sus aportes en los que disponga.</p>
+                        {{--<a class="btn btn-primary btn-sm">Learn more</a>--}}
                     </div>
                     <!-- Grid column -->
 
@@ -206,9 +206,9 @@
 
                     <!-- Grid column -->
                     <div class="col-lg-10 col-md-9 col-10">
-                        <h4 class="font-weight-bold">Customization</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <a class="btn btn-pink btn-sm">Learn more</a>
+                        <h4 class="font-weight-bold">Personalizacion</h4>
+                        <p class="grey-text">Fácil manipulación, ordenamiento en base a fechas, eventos sugeridos acorde a los gustos, disponibilidad según el organizador, todo a la facilidad para el usuario </p>
+                        {{--<a class="btn btn-pink btn-sm">Learn more</a>--}}
                     </div>
                     <!-- Grid column -->
 
@@ -232,9 +232,9 @@
 
                     <!-- Grid column -->
                     <div class="col-lg-10 col-md-9 col-10">
-                        <h4 class="font-weight-bold">Support</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                        <a class="btn btn-purple btn-sm">Learn more</a>
+                        <h4 class="font-weight-bold">Soporte</h4>
+                        <p class="grey-text">Especialistas al cuidado de la página, errores o dudas sobre quienes somos y demás preguntas, todo con transparencia hacia nuestro equipo y respondiendo de forma cordial, segura y a tiempo a través de un correo al servicio al cliente</p>
+                        {{--<a class="btn btn-purple btn-sm">Learn more</a>--}}
                     </div>
                     <!-- Grid column -->
 
@@ -254,9 +254,9 @@
     <section class="team-section my-5">
 
         <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold text-center my-5">Our amazing team</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-5">Nuestro genial equipo</h2>
         <!-- Section description -->
-        <p class="grey-text text-center w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.</p>
+        <p class="grey-text text-center w-responsive mx-auto mb-5">Describiendo a nuestro equipo que se encarga de darle la mayor satisfacción y comodidad posible en su travesía en nuestra plataforma.</p>
 
         <!-- Grid row-->
         <div class="row text-center text-md-left">
@@ -265,13 +265,16 @@
             <div class="col-lg-6 col-md-12 mb-5">
                 <div class="col-md-4 col-lg-6 float-left">
                     <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="rounded z-depth-1" alt="Sample avatar">
+                        <img src="https://scontent.flim5-1.fna.fbcdn.net/v/t31.0-8/289092_266420016708914_2043625_o.jpg?_nc_cat=104&_nc_ht=scontent.flim5-1.fna&oh=87840be7678ef9636d96115332ab3c9b&oe=5C641231" width="350" height="250" class="rounded z-depth-1" alt="Sample avatar">
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">John Doe</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Web Designer</h6>
-                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                    <h4 class="font-weight-bold mb-3">Salazar Ramos, Jose</h4>
+                    <h6 class="font-weight-bold grey-text mb-3">Programador</h6>
+                    <h6 class="font-weight-bold grey-text mb-3">Desarrollador web</h6>
+                    <p class="grey-text">Estudiante universitario, 23 años.
+                    Interesado en Inteligencia Artificial y algoritmos de optimización.</p>
+                    <p class="grey-text">Desarrollador aficionado de videojuegos.</p>
                     <!-- Facebook-->
                     <a class="p-2 fa-lg fb-ic">
                         <i class="fa fa-facebook"> </i>
@@ -289,13 +292,14 @@
             <div class="col-lg-6 col-md-12 mb-5">
                 <div class="col-md-4 col-lg-6 float-left">
                     <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded z-depth-1" alt="Sample avatar">
+                        <img src="https://scontent.flim5-4.fna.fbcdn.net/v/t1.0-9/15977491_10209924654370582_5178567594238498667_n.jpg?_nc_cat=106&_nc_ht=scontent.flim5-4.fna&oh=99b3c86e378e48b1bc9cb5f3e96afb4c&oe=5C6EDC0B" width="200" height="300" class="rounded z-depth-1" alt="Sample avatar">
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">Maria Kate</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Photographer</h6>
-                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
+                    <h4 class="font-weight-bold mb-3">Ruiz Cecilio, Christopher </h4>
+                    <h6 class="font-weight-bold grey-text mb-3">Programador</h6>
+					<h6 class="font-weight-bold grey-text mb-3">Director en proyectos</h6>
+                    <p class="grey-text">Aficionado a los videojuegos y a la tecnologia, programador web, 24 años, universitario</p>
                     <!-- Facebook-->
                     <a class="p-2 fa-lg fb-ic">
                         <i class="fa fa-facebook"> </i>
@@ -313,54 +317,11 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-6 col-md-12 mb-5">
-                <div class="col-md-4 col-lg-6 float-left">
-                    <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(32).jpg" class="rounded z-depth-1" alt="Sample avatar">
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">John Doe</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Web Designer</h6>
-                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-                    <!-- Facebook-->
-                    <a class="p-2 fa-lg fb-ic">
-                        <i class="fa fa-facebook"> </i>
-                    </a>
-                    <!-- Twitter -->
-                    <a class="p-2 fa-lg tw-ic">
-                        <i class="fa fa-twitter"> </i>
-                    </a>
-
-                </div>
-            </div>
+            
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-lg-6 col-md-12 mb-5">
-                <div class="col-md-4 col-lg-6 float-left">
-                    <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded z-depth-1" alt="Sample avatar">
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">Maria Kate</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Photographer</h6>
-                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p>
-                    <!-- Facebook-->
-                    <a class="p-2 fa-lg fb-ic">
-                        <i class="fa fa-facebook"> </i>
-                    </a>
-                    <!--YouTube -->
-                    <a class="p-2 fa-lg yt-ic">
-                        <i class="fa fa-youtube"> </i>
-                    </a>
-                    <!--Instagram-->
-                    <a class="p-2 fa-lg ins-ic">
-                        <i class="fa fa-instagram"> </i>
-                    </a>
-                </div>
-            </div>
+            
             <!-- Grid column -->
 
         </div>
@@ -382,9 +343,9 @@
     <section class="team-section text-center my-5">
 
         <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold my-5">Testimonials v.3</h2>
+        <h2 class="h1-responsive font-weight-bold my-5">Testimonios </h2>
         <!-- Section description -->
-        <p class="dark-grey-text w-responsive mx-auto mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur veniam.</p>
+        <p class="dark-grey-text w-responsive mx-auto mb-5">Algunas reseñas de nuestra plataforma hecha en foros, páginas asociada, correos o comentarios en nuestra página web</p>
 
         <!--Grid row-->
         <div class="row text-center">
@@ -399,9 +360,9 @@
                     </div>
                     <!--Content-->
                     <h4 class="font-weight-bold dark-grey-text mt-4">Anna Deynah</h4>
-                    <h6 class="font-weight-bold blue-text my-3">Web Designer</h6>
+                    <h6 class="font-weight-bold blue-text my-3">Diseñadora web</h6>
                     <p class="font-weight-normal dark-grey-text">
-                        <i class="fa fa-quote-left pr-2"></i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur.</p>
+                        <i class="fa fa-quote-left pr-2"></i>WOW! Cada vez me impresionas más! Excelente trabajo! Ahora a probarlo</p>
                     <!--Review-->
                     <div class="orange-text">
                         <i class="fa fa-star"> </i>
@@ -425,9 +386,9 @@
                     </div>
                     <!--Content-->
                     <h4 class="font-weight-bold dark-grey-text mt-4">John Doe</h4>
-                    <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
+                    <h6 class="font-weight-bold blue-text my-3">Desarrollador web</h6>
                     <p class="font-weight-normal dark-grey-text">
-                        <i class="fa fa-quote-left pr-2"></i>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi.</p>
+                        <i class="fa fa-quote-left pr-2"></i>Excelente plataforma ! Mil gracias. Como siempre todo muy bien explicado y de una manera sencilla.</p>
                     <!--Review-->
                     <div class="orange-text">
                         <i class="fa fa-star"> </i>
@@ -451,9 +412,9 @@
                     </div>
                     <!--Content-->
                     <h4 class="font-weight-bold dark-grey-text mt-4">Maria Kate</h4>
-                    <h6 class="font-weight-bold blue-text my-3">Photographer</h6>
+                    <h6 class="font-weight-bold blue-text my-3">Fotógrafa</h6>
                     <p class="font-weight-normal dark-grey-text">
-                        <i class="fa fa-quote-left pr-2"></i>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+                        <i class="fa fa-quote-left pr-2"></i>Son impresionantes, no he visto nada mejor que ello. Un material muy limpio muy claro y profesional.</p>
                     <!--Review-->
                     <div class="orange-text">
                         <i class="fa fa-star"> </i>
@@ -476,57 +437,57 @@
 
 
 
-    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-        <h1 class="display-4">Pricing</h1>
-        <p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
-    </div>
-    <div class="card-deck mb-3 text-center" id="mycards">
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Free</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-            </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Pro</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>20 users included</li>
-                    <li>10 GB of storage</li>
-                    <li>Priority email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-            </div>
-        </div>
-        <div class="card mb-4 box-shadow">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Enterprise</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>30 users included</li>
-                    <li>15 GB of storage</li>
-                    <li>Phone and email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
-            </div>
-        </div>
-    </div>
+    {{--<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">--}}
+        {{--<h1 class="display-4">Pricing</h1>--}}
+        {{--<p class="lead">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>--}}
+    {{--</div>--}}
+    {{--<div class="card-deck mb-3 text-center" id="mycards">--}}
+        {{--<div class="card mb-4 box-shadow">--}}
+            {{--<div class="card-header">--}}
+                {{--<h4 class="my-0 font-weight-normal">Free</h4>--}}
+            {{--</div>--}}
+            {{--<div class="card-body">--}}
+                {{--<h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>--}}
+                {{--<ul class="list-unstyled mt-3 mb-4">--}}
+                    {{--<li>10 users included</li>--}}
+                    {{--<li>2 GB of storage</li>--}}
+                    {{--<li>Email support</li>--}}
+                    {{--<li>Help center access</li>--}}
+                {{--</ul>--}}
+                {{--<button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="card mb-4 box-shadow">--}}
+            {{--<div class="card-header">--}}
+                {{--<h4 class="my-0 font-weight-normal">Pro</h4>--}}
+            {{--</div>--}}
+            {{--<div class="card-body">--}}
+                {{--<h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>--}}
+                {{--<ul class="list-unstyled mt-3 mb-4">--}}
+                    {{--<li>20 users included</li>--}}
+                    {{--<li>10 GB of storage</li>--}}
+                    {{--<li>Priority email support</li>--}}
+                    {{--<li>Help center access</li>--}}
+                {{--</ul>--}}
+                {{--<button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="card mb-4 box-shadow">--}}
+            {{--<div class="card-header">--}}
+                {{--<h4 class="my-0 font-weight-normal">Enterprise</h4>--}}
+            {{--</div>--}}
+            {{--<div class="card-body">--}}
+                {{--<h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>--}}
+                {{--<ul class="list-unstyled mt-3 mb-4">--}}
+                    {{--<li>30 users included</li>--}}
+                    {{--<li>15 GB of storage</li>--}}
+                    {{--<li>Phone and email support</li>--}}
+                    {{--<li>Help center access</li>--}}
+                {{--</ul>--}}
+                {{--<button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     </div>
 
@@ -541,66 +502,38 @@
             <div class="row text-center text-md-left mt-3 pb-3">
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Company name</h6>
-                    <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit.</p>
+                <div class="col-md-8 col-lg-8 col-xl-8 mx-auto mt-3">
+                    <h6 class="text-uppercase mb-4 font-weight-bold">RCSR</h6>
+                    <p>Empresa tecnologica de desarrollo web, enfocada en soluciones para el sector educativo publico y privado.</p>
+                    <p>Innovación de hoy para el éxito del mañana.</p>
                 </div>
                 <!-- Grid column -->
 
                 <hr class="w-100 clearfix d-md-none">
 
                 <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
-                    <p>
-                        <a href="#!">MDBootstrap</a>
-                    </p>
-                    <p>
-                        <a href="#!">MDWordPress</a>
-                    </p>
-                    <p>
-                        <a href="#!">BrandFlow</a>
-                    </p>
-                    <p>
-                        <a href="#!">Bootstrap Angular</a>
-                    </p>
-                </div>
+                
                 <!-- Grid column -->
 
                 <hr class="w-100 clearfix d-md-none">
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Useful links</h6>
-                    <p>
-                        <a href="#!">Your Account</a>
-                    </p>
-                    <p>
-                        <a href="#!">Become an Affiliate</a>
-                    </p>
-                    <p>
-                        <a href="#!">Shipping Rates</a>
-                    </p>
-                    <p>
-                        <a href="#!">Help</a>
-                    </p>
-                </div>
+               
 
                 <!-- Grid column -->
                 <hr class="w-100 clearfix d-md-none">
 
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
                     <p>
-                        <i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
+                        <i class="fa fa-home mr-3"></i> Jr. Piedra Bigua 2277</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i> info@gmail.com</p>
+                        <i class="fa fa-envelope mr-3"></i> jose.salazar1@unmsm.edu.pe</p>
                     <p>
-                        <i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
+                        <i class="fa fa-envelope mr-3"></i> christopher.ruiz@unmsm.edu.pe</p>
                     <p>
-                        <i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
+                        <i class="fa fa-phone mr-3"></i> +51 931 093 244</p>
                 </div>
                 <!-- Grid column -->
 
@@ -618,7 +551,7 @@
                     <!--Copyright-->
                     <p class="text-center text-md-left">© 2018 Copyright:
                         <a href="https://mdbootstrap.com/bootstrap-tutorial/">
-                            <strong> MDBootstrap.com</strong>
+                            <strong> RCSR.com</strong>
                         </a>
                     </p>
 

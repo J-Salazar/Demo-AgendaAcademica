@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->foreign('orgnz_id')->references('id')->on('orgnzs');
 
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('site');
             $table->string('tag');
             $table->timestamp('init_date');

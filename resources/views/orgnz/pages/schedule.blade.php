@@ -114,7 +114,7 @@
                         parseInt('{{date_parse($event->end_date)["hour"]}}',10),
                         parseInt('{{date_parse($event->end_date)["minute"]}}',10)
                     ),
-                    url : '{{url('user/'.$event->id.'/info')}}',
+                    url : '{{url('orgnz/'.$event->id.'/info')}}',
                     backgroundColor: '#ff'+(Math.floor(Math.random() * 9000)+10).toString(10), //random color
                     borderColor    : '#000000'
                 },
