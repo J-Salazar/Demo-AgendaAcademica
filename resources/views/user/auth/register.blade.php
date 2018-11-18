@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="panel-heading"><p class="text-dark text-lg ">Registro - Usuario</p></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/user/register') }}">
                         {{ csrf_field() }}
@@ -20,7 +20,9 @@
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
@@ -34,21 +36,25 @@
 
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
+                            <label for="email" class="col-md-4 control-label">Correo electrónico</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
@@ -62,77 +68,89 @@
 
                                 @if ($errors->has('eap'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('eap') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('alias') ? ' has-error' : '' }}">
-                            <label for="alias" class="col-md-4 control-label">Alias</label>
+                            <label for="alias" class="col-md-4 control-label">Nombre de usuario</label>
 
                             <div class="col-md-6">
                                 <input id="alias" class="form-control" name="alias" value="{{ old('alias') }}">
 
                                 @if ($errors->has('alias'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('alias') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('code') ? ' has-error' : '' }}">
-                            <label for="code" class="col-md-4 control-label">Codigo de alumno</label>
+                            <label for="code" class="col-md-4 control-label">Código de alumno</label>
 
                             <div class="col-md-6">
                                 <input id="code" class="form-control" name="code" value="{{ old('code') }}">
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('code') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
-                            <label for="phone" class="col-md-4 control-label">Telefono</label>
+                            <label for="phone" class="col-md-4 control-label">Teléfono</label>
 
                             <div class="col-md-6">
                                 <input id="phone" class="form-control" name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('phone') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label">Confirmar contraseña</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
+                                        <strong>
+                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
@@ -141,7 +159,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Registrarse
                                 </button>
                             </div>
                         </div>

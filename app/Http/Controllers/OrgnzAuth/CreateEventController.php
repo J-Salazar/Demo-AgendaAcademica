@@ -27,6 +27,9 @@ class CreateEventController extends Controller
             'new_event_date_end' => 'required',
         ]);
 
+        if ($request->new_event_date > $request->new_event_date_end){
+            return redirect(url('/orgnz/create'))->with('mensaje',"Error al crear el evento, verifique las fechas ingresadas");
+        }
 
         $request->new_event_date = str_replace('T',' ', $request->new_event_date);
         $request->new_event_date = $request->new_event_date.':00';

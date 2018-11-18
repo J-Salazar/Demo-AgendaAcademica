@@ -46,7 +46,7 @@
 
                 <ul class="nav-header nav-pills nav-sidebar flex-column"  data-widget="treeview" role="menu" data-accordion="false">
                     <a href="{{url('/')}}">
-                    <img src="{{asset('open-iconic-master/png/arrow-circle-left-3x.png')}}">
+                    <img src="{{asset('open-iconic-master/png/home-3x.png')}}">
                     </a>
                     <ul class="nav-item has-treeview" >
                         <a href="#" class="nav-link">
@@ -291,9 +291,9 @@
     </div>
     <!-- ./wrapper -->
     @if(Auth::guest())
+    <div class="pt-5">
     <!-- Footer -->
-    <!-- Footer -->
-    <footer class="page-footer font-small bg-info ">
+    <footer class="page-footer font-small bg-info  fixed-bottom pt-0 ">
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
         <a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">
@@ -302,19 +302,8 @@
     </div>
     <!-- Copyright -->
     </footer>
-    {{----}}
-    {{--<footer class="main-footer fixed-bottom ml-0 text-white" style="background-color: #0d47a1!important; margin: 0;height: 10%; ;position: absolute;bottom: @yield('espacio')%;" >--}}
-
-        {{--<!-- Copyright -->--}}
-        {{--<div class="footer-copyright text-center py-3">© 2018 Copyright:--}}
-            {{--<a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">--}}
-                {{--<strong>Agenda Académica</strong>--}}
-            {{--</a>--}}
-        {{--</div>--}}
-        {{--<!-- Copyright -->--}}
-
-    {{--</footer>--}}
     <!-- Footer -->
+    </div>
     @endif
 
     <!-- Scripts -->

@@ -70,8 +70,9 @@
                                    {{--value="{{ old('new_event_date') }}" --}}
                                    name="new_event_date"
                                    type="datetime-local"
-                                   value="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:00"
-                                   id="example-datetime-local-input"
+                                   min="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
+                                   value="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
+                                   id="datetime-local-input_init" required
                             ><br>
 
                             @if($errors->has('new_event_date'))
@@ -83,8 +84,9 @@
                                    {{--value="{{ old('new_event_date') }}" --}}
                                    name="new_event_date_end"
                                    type="datetime-local"
-                                   value="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:00"
-                                   id="example-datetime-local-input"
+                                   min="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
+                                   value="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
+                                   id="datetime-local-input_end" required
                             ><br>
 
                             @if($errors->has('new_event_date_end'))
@@ -99,6 +101,8 @@
 
                         <p class="text-success">{{ Session::get('mensaje_exitoso') }}</p>
                         {{ Session::forget('mensaje_exitoso') }}
+                        <p class="text-danger">{{ Session::get('mensaje') }}</p>
+                        {{ Session::forget('mensaje') }}
                     </div>
                     <!-- /.col -->
 

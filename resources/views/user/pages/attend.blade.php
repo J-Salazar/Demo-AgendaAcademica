@@ -45,13 +45,13 @@
                 @if($events->isempty() )
                     <td colspan="6" class="text-center">No se encontró ningún evento</td>
                     @else
-                    @foreach($events as $event)
+                    @foreach($events->where('init_date','>',Carbon\Carbon::now()) as $event)
                         <tr>
 
                             <th scope="row">{{ $event->id }}</th>
                             <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
                             <td>{{ substr(strip_tags($event->description),0,40) }}...</td>
-                            <td>{{ $event->event_date }}</td>
+                            <td>{{ $event->init_date }}--{{ $event->end_date }}</td>
                             <td><a class="btn btn-outline-info"
                                    href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/interesa')}}"
                                 >Mover a Me interesa</a>
@@ -71,7 +71,7 @@
         @if( $events->first() != null )
         <!-- Main content -->
             <section class="content">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
 
                         <!-- /.col -->
@@ -155,7 +155,7 @@
                     day  : 'día'
                 },
                 //Random default events
-                events    : [@foreach($events as $event)
+                events    : [@foreach($events->where('init_date','>',Carbon\Carbon::now()) as $event)
                 {
                     title : '{{ $event->title }}',
                     start : new Date(parseInt('{{date_parse($event->init_date)["year"]}}',10),
@@ -254,7 +254,33 @@
 
     <script>
         $(function () {
-            $("#example1").DataTable();
+            $("#example1").DataTable({
+                "oLanguage": {
+                    "sProcessing":     "Procesando...",
+                    "sLengthMenu":     "Mostrar _MENU_ registros",
+                    "sZeroRecords":    "No se encontraron resultados",
+                    "sEmptyTable":     "Ningún dato disponible en esta tabla",
+                    "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                    "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+                    "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+                    "sInfoPostFix":    "",
+                    "sSearch":         "Buscar:",
+                    "sUrl":            "",
+                    "sInfoThousands":  ",",
+                    "sLoadingRecords": "Cargando...",
+                    "oPaginate": {
+                        "sFirst":    "Primero",
+                        "sLast":     "Último",
+                        "sNext":     "Siguiente",
+                        "sPrevious": "Anterior"
+                    },
+                    "oAria": {
+                        "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                    }
+                }
+
+            });
         });
     </script>
 

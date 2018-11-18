@@ -2,6 +2,7 @@
 
 @section('menu-eventos','menu-open')
 @section('link-eventos','active')
+@section('eventos-activo','100%')
 {{--@section('link-mis-eventos','active')--}}
 @section('mis-eventos-activo','100%')
 {{--@section('eventos-activo','100%')--}}
@@ -80,8 +81,9 @@
                                    {{--value="{{ old('new_event_date') }}" --}}
                                    name="new_event_date"
                                    type="datetime-local"
+                                   min="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
                                    value="{{strtok($event->init_date,' ')}}T{{trim(strstr($event->init_date,' '))}}"
-                                   id="example-datetime-local-input"
+                                   id="example-datetime-local-input" required
                             ><br>
 
                             @if($errors->has('new_event_date'))
@@ -93,8 +95,9 @@
                                    {{--value="{{ old('new_event_init_date') }}" --}}
                                    name="new_event_date_end"
                                    type="datetime-local"
+                                   min="{{Carbon\Carbon::now()->toDateString()}}T{{Carbon\Carbon::now()->format("H")}}:{{Carbon\Carbon::now()->format("i")}}"
                                    value="{{strtok($event->end_date,' ')}}T{{trim(strstr($event->end_date,' '))}}"
-                                   id="example-datetime-local-input"
+                                   id="example-datetime-local-input" required
                             ><br>
 
                             @if($errors->has('new_event_date_end'))
@@ -110,6 +113,8 @@
 
                         <p class="text-success">{{ Session::get('mensaje') }}</p>
                         {{ Session::forget('mensaje') }}
+                        <p class="text-danger">{{ Session::get('mensaje_error') }}</p>
+                        {{ Session::forget('mensaje_error') }}
                     </div>
                     <!-- /.col -->
 

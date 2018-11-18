@@ -21,76 +21,31 @@
         </section>
 
         <!-- Main content -->
-        {{--<section class="content">--}}
-            {{--<div class="container-fluid">--}}
-                {{--<div class="row">--}}
-                    {{--<div class="col-md-3">--}}
-                        {{--<div class="card">--}}
-                            {{--<div class="card-header">--}}
-                                {{--<h4 class="card-title">Draggable Events</h4>--}}
-                            {{--</div>--}}
-                            {{--<div class="card-body">--}}
-                                {{--<!-- the events -->--}}
-                                {{--<div id="external-events">--}}
-                                    {{--<div class="external-event bg-success">Lunch</div>--}}
-                                    {{--<div class="external-event bg-warning">Go home</div>--}}
-                                    {{--<div class="external-event bg-info">Do homework</div>--}}
-                                    {{--<div class="external-event bg-primary">Work on UI design</div>--}}
-                                    {{--<div class="external-event bg-danger">Sleep tight</div>--}}
-                                    {{--<div class="checkbox">--}}
-                                        {{--<label for="drop-remove">--}}
-                                            {{--<input type="checkbox" id="drop-remove">--}}
-                                            {{--remove after drop--}}
-                                        {{--</label>--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<!-- /.card-body -->--}}
-                        {{--</div>--}}
-                        {{--<!-- /. box -->--}}
-                        {{--<div class="card">--}}
-                            {{--<div class="card-header">--}}
-                                {{--<h3 class="card-title">Create Event</h3>--}}
-                            {{--</div>--}}
-                            {{--<div class="card-body">--}}
-                                {{--<div class="btn-group" style="width: 100%; margin-bottom: 10px;">--}}
-                                    {{--<ul class="fc-color-picker" id="color-chooser">--}}
-                                        {{--<li><a class="text-primary" href="#"><i class="fa fa-square"></i></a></li>--}}
-                                        {{--<li><a class="text-warning" href="#"><i class="fa fa-square"></i></a></li>--}}
-                                        {{--<li><a class="text-success" href="#"><i class="fa fa-square"></i></a></li>--}}
-                                        {{--<li><a class="text-danger" href="#"><i class="fa fa-square"></i></a></li>--}}
-                                        {{--<li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>--}}
-                                    {{--</ul>--}}
-                                {{--</div>--}}
-                                {{--<!-- /btn-group -->--}}
-                                {{--<div class="input-group">--}}
-                                    {{--<input id="new-event" type="text" class="form-control" placeholder="Event Title">--}}
+        <section class="content">
+            <div class="container">
+                <div class="row">
 
-                                    {{--<div class="input-group-append">--}}
-                                        {{--<button id="add-new-event" type="button" class="btn btn-primary btn-flat">Add</button>--}}
-                                    {{--</div>--}}
-                                    {{--<!-- /btn-group -->--}}
-                                {{--</div>--}}
-                                {{--<!-- /input-group -->--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<!-- /.col -->--}}
-                    {{--<div class="col-md-9">--}}
-                        {{--<div class="card card-primary">--}}
-                            {{--<div class="card-body p-0">--}}
-                                {{--<!-- THE CALENDAR -->--}}
-                                {{--<div id="calendar"></div>--}}
-                            {{--</div>--}}
-                            {{--<!-- /.card-body -->--}}
-                        {{--</div>--}}
-                        {{--<!-- /. box -->--}}
-                    {{--</div>--}}
-                    {{--<!-- /.col -->--}}
-                {{--</div>--}}
-                {{--<!-- /.row -->--}}
-            {{--</div><!-- /.container-fluid -->--}}
-        {{--</section>--}}
+                    <div class="col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-body p-0">
+                                <!-- THE CALENDAR -->
+                                @if($events != NULL)
+                                <canvas id="myChart" width="200" height="100"></canvas>
+                                    @else
+                                <p class="text-center">No tiene ningún evento próximo<br>
+                                    <a href="{{ url('/orgnz/create') }}">Crear evento</a>
+                                </p>
+                                    @endif
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /. box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </section>
         <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
@@ -98,3 +53,69 @@
 
 
 @endsection
+
+
+@section('datatablejs')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+
+
+    @endsection
+
+@section('calendariojs')
+
+    <script>
+        var ctx = document.getElementById("myChart").getContext('2d');
+        @if(isset($events))
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["{{Carbon\Carbon::today()->subDays(6)->day}}/{{Carbon\Carbon::today()->subDays(6)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(5)->day}}/{{Carbon\Carbon::today()->subDays(5)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(4)->day}}/{{Carbon\Carbon::today()->subDays(4)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(3)->day}}/{{Carbon\Carbon::today()->subDays(3)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(2)->day}}/{{Carbon\Carbon::today()->subDays(2)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(1)->day}}/{{Carbon\Carbon::today()->subDays(1)->month}}",
+                    "{{Carbon\Carbon::today()->subDays(0)->day}}/{{Carbon\Carbon::today()->subDays(0)->month}}"
+                ],
+                datasets: [@foreach($events as $event){
+                    label: '{{$event->title}}',
+                    data: [
+                        {{--{{$event->users()->wherePivot('interest','asistire')--}}
+                        {{--->wherePivot('created_at',Carbon\Carbon::now()->subDays(6))->count()}},--}}
+
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(7))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(6))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(6))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(5))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(5))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(4))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(4))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(3))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(3))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(2))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(2))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(1))->count()}},
+                        {{$event->users()->wherePivot('interest','asistire')->wherePivot('created_at','>=',Carbon\Carbon::now()->subDays(1))->wherePivot('created_at','<=',Carbon\Carbon::now()->subDays(0))->count()}}
+                    ],
+                    backgroundColor:[
+                        'rgba(255,255,255,0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(120,'+(Math.floor(Math.random() * 200)+100).toString(10)+','+(Math.floor(Math.random() * 200)+100).toString(10)+',1)'
+                    ],
+                    borderWidth: 1
+                },@endforeach]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+        @endif
+    </script>
+
+    @endsection

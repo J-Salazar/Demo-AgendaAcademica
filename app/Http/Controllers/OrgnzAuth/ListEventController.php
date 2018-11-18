@@ -8,6 +8,7 @@ use App;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\URL;
 
 class ListEventController extends Controller
 {
@@ -25,6 +26,15 @@ class ListEventController extends Controller
 
         return view('orgnz.pages.events')->with(['events'=>$events,'users'=>$users,'orgnz_id'=>$orgnz_id]);
 
+    }
+
+    public function schedule()
+    {
+        $orgnz_id = Auth::user()->id;
+        $orgnz = Orgnz::Find($orgnz_id);
+        $events = $orgnz->events;
+
+        return view('orgnz.pages.schedule')->with('events',$events);
     }
 
     public function edit_event(Request $request,$orgnz_id, $event_id){
@@ -61,6 +71,10 @@ class ListEventController extends Controller
             'new_event_date' => 'required',
             'new_event_date_end' => 'required',
         ]);
+
+        if ($request->new_event_date > $request->new_event_date_end){
+            return redirect(url(URL::previous()))->with('mensaje_error',"Error al crear el evento, verifique las fechas ingresadas");
+        }
 
         $event->title      = $request->new_event_title;
         $event->description= $request->new_event_description;

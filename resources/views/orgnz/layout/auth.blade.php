@@ -46,7 +46,7 @@
 
                 <ul class="nav-header nav-pills nav-sidebar flex-column"  data-widget="treeview" role="menu" data-accordion="false">
                     <a href="{{url('/')}}">
-                    <img src="{{asset('open-iconic-master/png/arrow-circle-left-3x.png')}}">
+                    <img src="{{asset('open-iconic-master/png/home-3x.png')}}">
                     </a>
                     <ul class="nav-item has-treeview" >
                         <a href="#" class="nav-link">
@@ -78,6 +78,14 @@
                                          style="filter: invert(90%);"
                                     >
                                     <p>Registrarse como Usuario</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('/orgnz/register') }}" class="nav-link">
+                                    <img src="{{asset('open-iconic-master/png/caret-right.png')}}"
+                                         style="filter: invert(90%);"
+                                    >
+                                    <p>Registrarse como Organizador</p>
                                 </a>
                             </li>
                         </ul>
@@ -295,8 +303,8 @@
     <!-- ./wrapper -->
     @if(Auth::guest())
     <!-- Footer -->
-    <footer class="main-footer fixed-bottom ml-0 text-white" style="background-color: #0d47a1!important;position: absolute;bottom: @yield('espacio')%;" >
-
+    <div class="pt-5">
+    <footer class="page-footer font-small bg-info  fixed-bottom pt-0">
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2018 Copyright:
             <a href="{{url('/')}}" class="alert-link text-white" style="text-decoration: none!important;">
@@ -304,9 +312,9 @@
             </a>
         </div>
         <!-- Copyright -->
-
     </footer>
     <!-- Footer -->
+    </div>
     @endif
 
     <!-- Scripts -->
