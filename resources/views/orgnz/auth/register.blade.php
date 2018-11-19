@@ -14,7 +14,12 @@
                             <label for="name" class="col-md-4 control-label">Nombres</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
+                                <input id="name" type="text"  pattern="[a-z A-Z]{1,}"
+                                       class="form-control"
+                                       name="name"
+                                       value="{{ old('name') }}"
+                                       autofocus
+                                       title="No se permiten números en este campo.">
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -30,6 +35,8 @@
                             <div class="col-md-6">
                                 <input id="last_name"
                                        type="text"
+                                       pattern="[a-z A-Z]{1,}"
+                                       title="No se permiten números en este campo."
                                        class="form-control"
                                        name="last_name"
                                        value="{{ old('last_name') }}" autofocus>
@@ -60,7 +67,7 @@
                             <label  class="col-md-4 control-label">Dirección de la institución que representa</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" name="dir" value="{{ old('dir') }}">
+                                <input class="form-control" type="text" name="dir" value="{{ old('dir') }}">
 
                                 @if ($errors->has('dir'))
                                     <span class="help-block">
@@ -74,7 +81,10 @@
                             <label class="col-md-4 control-label">Teléfono</label>
 
                             <div class="col-md-6">
-                                <input class="form-control" type="tel" maxlength="9" name="phone" value="{{ old('phone') }}">
+                                <input class="form-control" type="tel"
+                                       pattern="[0-9]{9,}"
+                                       title="Solo se permiten números de 9 dígitos en este campo."
+                                       maxlength="9" name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

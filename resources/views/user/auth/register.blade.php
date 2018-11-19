@@ -16,7 +16,11 @@
                             <label for="name" class="col-md-4 control-label">Nombres</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autofocus>
+                                <input id="name"
+                                       type="text"
+                                       pattern="[a-z A-Z]{1,}"
+                                       title="No se permiten números en este campo."
+                                       class="form-control" name="name" value="{{ old('name') }}" autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -32,7 +36,10 @@
                             <label for="last_name" class="col-md-4 control-label">Apellidos</label>
 
                             <div class="col-md-6">
-                                <input id="last_name" class="form-control" name="last_name" value="{{ old('last_name') }}">
+                                <input id="last_name" class="form-control"
+                                       pattern="[a-z A-Z]{1,}"
+                                       title="No se permiten números en este campo."
+                                       name="last_name" value="{{ old('last_name') }}">
 
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
@@ -48,7 +55,8 @@
                             <label for="email" class="col-md-4 control-label">Correo electrónico</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
+                                <input id="email" type="email"
+                                       class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
@@ -64,7 +72,10 @@
                             <label for="eap" class="col-md-4 control-label">Escuela Académico Profesional</label>
 
                             <div class="col-md-6">
-                                <input id="eap" class="form-control" name="eap" value="{{ old('eap') }}">
+                                <input id="eap" type="text"
+                                       pattern="[a-z A-Z]"
+                                       title="No se permiten números en este campo."
+                                       class="form-control" name="eap" value="{{ old('eap') }}">
 
                                 @if ($errors->has('eap'))
                                     <span class="help-block">
@@ -96,7 +107,10 @@
                             <label for="code" class="col-md-4 control-label">Código de alumno</label>
 
                             <div class="col-md-6">
-                                <input id="code" type="tel" class="form-control" name="code" value="{{ old('code') }}">
+                                <input id="code" type="tel"
+                                       pattern="[0-9]"
+                                       title="Solo se permiten números en este campo."
+                                       class="form-control" name="code" value="{{ old('code') }}">
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
@@ -112,7 +126,10 @@
                             <label for="phone" class="col-md-4 control-label">Teléfono</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="tel" maxlength="9" class="form-control" name="phone" value="{{ old('phone') }}">
+                                <input id="phone" type="tel"
+                                       pattern="[0-9]{9,}"
+                                       title="Solo se permiten números de 9 dígitos en este campo."
+                                       maxlength="9" class="form-control" name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">

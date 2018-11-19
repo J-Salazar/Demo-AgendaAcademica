@@ -34,24 +34,42 @@
                         <form method="POST" action="{{url('/orgnz/update')}}">
                             {{ csrf_field() }}
                             <p class="card-title">Nombres</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_name"  value="{{ Auth::user()->name }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   type="text"
+                                   pattern="[a-z A-Z]"
+                                   title="No se permiten números en este campo."
+                                   name="new_orgnz_name"  value="{{ Auth::user()->name }}"><br>
                             <p class="card-title">Apellidos</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_last_name"  value="{{ Auth::user()->last_name }}"><br>
-                            <p class="card-title">Email</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   type="text"
+                                   pattern="[a-z A-Z]"
+                                   title="No se permiten números en este campo."
+                                   name="new_orgnz_last_name"  value="{{ Auth::user()->last_name }}"><br>
+                            <p class="card-title">Correo electrónico</p>
                             <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_email"  value="{{ Auth::user()->email }}"><br>
                             @if ($errors->has('new_orgnz_email'))
                                 <span class="help-block">
                                         <strong>Email no válido</strong>
                                     </span>
                             @endif
-                            <p class="card-title">Telefono</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_phone"  value="{{ Auth::user()->phone }}"><br>
-                            <p class="card-title">Direccion</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_dir"  value="{{ Auth::user()->dir }}" readonly><br>
-                            <p class="card-title">Descripcion visible en sus eventos</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_desc"  value="{{ Auth::user()->desc }}"><br>
+                            <p class="card-title">Teléfono</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   type="tel"
+                                   pattern="[0-9]{9,}"
+                                   title="Solo se permiten números en este campo."
+                                   name="new_orgnz_phone"  value="{{ Auth::user()->phone }}"><br>
+                            <p class="card-title">Dirección</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_orgnz_dir"
+                                   value="{{ Auth::user()->dir }}" readonly><br>
+                            <p class="card-title">Descripción visible en sus eventos</p>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_orgnz_desc"
+                                   value="{{ Auth::user()->desc }}"><br>
                             <p class="card-title">Nombre de Usuario</p>
-                            <input class="border-light w-100 rounded bg-gray-light" name="new_orgnz_alias"  value="{{ Auth::user()->alias }}"><br>
+                            <input class="border-light w-100 rounded bg-gray-light"
+                                   name="new_orgnz_alias"
+                                   value="{{ Auth::user()->alias }}"><br>
                             @if ($errors->has('new_orgnz_alias'))
                                 <span class="help-block">
                                         <strong>Nombre de usuario no válido</strong>

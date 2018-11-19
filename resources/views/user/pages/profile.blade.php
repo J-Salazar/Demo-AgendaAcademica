@@ -36,15 +36,21 @@
                             {{ csrf_field() }}
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light"
+                                   type="text"
+                                   pattern="[a-z A-Z]"
+                                   title="No se permiten números en este campo."
                                    name="new_user_name"
                                    value="{{ Auth::user()->name }}"><br>
 
                             <p class="card-title">Apellidos</p>
                             <input class="border-light w-100 rounded bg-gray-light"
+                                   type="text"
+                                   pattern="[a-z A-Z]"
+                                   title="No se permiten números en este campo."
                                    name="new_user_last_name"
                                    value="{{ Auth::user()->last_name }}"><br>
 
-                            <p class="card-title">Email</p>
+                            <p class="card-title">Correo electrónico</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    name="new_user_email"
                                    value="{{ Auth::user()->email }}"><br>
@@ -54,8 +60,11 @@
                                     </span>
                             @endif
 
-                            <p class="card-title">Escuela Academico Profesional</p>
+                            <p class="card-title">Escuela Académico Profesional</p>
                             <input class="border-light w-100 rounded bg-gray-light"
+                                   type="text"
+                                   pattern="[a-z A-Z]"
+                                   title="No se permiten números en este campo."
                                    name="new_user_eap"
                                    value="{{ Auth::user()->eap }}"><br>
                             @if ($errors->has('new_user_eap'))
@@ -64,8 +73,12 @@
                                     </span>
                             @endif
 
-                            <p class="card-title">Codigo de alumno</p>
+                            <p class="card-title">Código de alumno</p>
                             <input class="border-light w-100 rounded bg-gray-light"
+                                   type="tel"
+                                   {{--maxlength="9"--}}
+                                   pattern="[0-9]"
+                                   title="No se permiten números en este campo."
                                    name="new_user_code"
                                    value="{{ Auth::user()->code }}"><br>
                             @if ($errors->has('new_user_code'))
@@ -74,8 +87,11 @@
                                     </span>
                             @endif
 
-                            <p class="card-title">Telefono</p>
+                            <p class="card-title">Teléfono</p>
                             <input class="border-light w-100 rounded bg-gray-light"
+                                   type="tel"
+                                   pattern="[0-9]{9,}"
+                                   title="Solo se permiten números de 9 dígitos en este campo."
                                    name="new_user_phone"
                                    value="{{ Auth::user()->phone }}"><br>
                             @if ($errors->has('new_user_phone'))
@@ -84,7 +100,7 @@
                                     </span>
                             @endif
 
-                            <p class="card-title">Temas de interes</p>
+                            <p class="card-title">Temas de interés</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    name="new_user_my_tag"
                                    value="{{ Auth::user()->my_tag }}"><br>
