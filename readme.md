@@ -23,6 +23,7 @@ php artisan migrate:install
 Si desea contribuir con este proyecto puede comunicarse con nuestro equipo de desarrollo al correo:  
 
 - jose.salazar1@unmsm.edu.pe
+- christopher.ruiz@unmsm.edu.pe
 
 ## Licencia
 [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)
