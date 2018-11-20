@@ -250,7 +250,7 @@
                                     </a>
                                 </li>
 
-                                <li class="nav-header">Configuracion</li>
+                                <li class="nav-header">Configuración</li>
                                 <li class="nav-item">
                                     <a href="{{ url('user/profile') }}" class="nav-link @yield('link-perfil')">
                                         <img src="{{asset('open-iconic-master/png/pencil-3x.png')}}"
@@ -265,7 +265,7 @@
                                        onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                         <img src="{{ asset('open-iconic-master/png/account-logout-3x.png') }}">
-                                        <p>Cerrar Sesion</p>
+                                        <p>Cerrar Sesión</p>
                                     </a>
 
                                     <form id="logout-form" action="{{ url('/user/logout') }}" method="POST" style="display: none;">
