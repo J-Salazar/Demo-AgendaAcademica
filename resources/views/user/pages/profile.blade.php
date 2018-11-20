@@ -37,7 +37,7 @@
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_name"
                                    value="{{ Auth::user()->name }}"><br>
@@ -52,7 +52,7 @@
                             <p class="card-title">Apellidos</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_last_name"
                                    value="{{ Auth::user()->last_name }}"><br>
@@ -79,7 +79,7 @@
                             <p class="card-title">Escuela Académico Profesional</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_eap"
                                    value="{{ Auth::user()->eap }}"><br>
@@ -97,7 +97,7 @@
                                    {{--maxlength="9"--}}
                                    pattern="[0-9]{8,}"
                                    maxlength="8"
-                                   title="No se permiten números en este campo."
+                                   title="Solo se permiten números de 8 dígitos en este campo."
                                    name="new_user_code"
                                    value="{{ Auth::user()->code }}"><br>
                             @if ($errors->has('new_user_code'))

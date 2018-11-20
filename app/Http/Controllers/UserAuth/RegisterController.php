@@ -54,7 +54,7 @@ class RegisterController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'eap' => 'required|max:255',
             'alias' => 'required|max:255',
-            'code' => 'required|max:255',
+            'code' => 'required|max:255|unique:users',
             'phone' => 'required|max:255',
             'password' => 'required|min:6|confirmed',
         ]);

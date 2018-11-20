@@ -14,7 +14,7 @@
                             <label for="name" class="col-md-4 control-label">Nombres</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text"  pattern="[a-z A-Z]{1,}"
+                                <input id="name" type="text"  pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                        class="form-control"
                                        name="name"
                                        value="{{ old('name') }}"
@@ -37,7 +37,7 @@
                             <div class="col-md-6">
                                 <input id="last_name"
                                        type="text"
-                                       pattern="[a-z A-Z]{1,}"
+                                       pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                        title="No se permiten números en este campo."
                                        class="form-control"
                                        name="last_name"

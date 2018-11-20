@@ -36,7 +36,7 @@
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_orgnz_name"  value="{{ Auth::user()->name }}"><br>
                             @if ($errors->has('new_orgnz_name'))
@@ -50,7 +50,7 @@
                             <p class="card-title">Apellidos</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_orgnz_last_name"  value="{{ Auth::user()->last_name }}"><br>
                             @if ($errors->has('new_orgnz_last_name'))

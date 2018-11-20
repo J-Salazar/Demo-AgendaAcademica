@@ -18,7 +18,7 @@
                             <div class="col-md-6">
                                 <input id="name"
                                        type="text"
-                                       pattern="[a-z A-Z]{1,}"
+                                       pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                        title="No se permiten números en este campo."
                                        class="form-control" name="name" value="{{ old('name') }}" autofocus>
 
@@ -37,7 +37,7 @@
 
                             <div class="col-md-6">
                                 <input id="last_name" class="form-control"
-                                       pattern="[a-z A-Z]{1,}"
+                                       pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                        title="No se permiten números en este campo."
                                        name="last_name" value="{{ old('last_name') }}">
 
@@ -73,7 +73,7 @@
 
                             <div class="col-md-6">
                                 <input id="eap" type="text"
-                                       pattern="[a-z A-Z]{1,}"
+                                       pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
                                        title="No se permiten números en este campo."
                                        class="form-control" name="eap" value="{{ old('eap') }}">
 
@@ -110,7 +110,7 @@
                                 <input id="code" type="tel"
                                        pattern="[0-9]{8,}"
                                        maxlength="8"
-                                       title="Solo se permiten números en este campo."
+                                       title="Solo se permiten números de 8 dígitos en este campo."
                                        class="form-control" name="code" value="{{ old('code') }}">
 
                                 @if ($errors->has('code'))
