@@ -37,18 +37,32 @@
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]"
+                                   pattern="[a-z A-Z]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_name"
                                    value="{{ Auth::user()->name }}"><br>
+                            @if ($errors->has('new_user_name'))
+                                <span class="help-block">
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_name') }}
+                                        </strong>
+                                </span>
+                            @endif
 
                             <p class="card-title">Apellidos</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]"
+                                   pattern="[a-z A-Z]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_last_name"
                                    value="{{ Auth::user()->last_name }}"><br>
+                            @if ($errors->has('new_user_last_name'))
+                                <span class="help-block">
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_last_name') }}
+                                        </strong>
+                                </span>
+                            @endif
 
                             <p class="card-title">Correo electrónico</p>
                             <input class="border-light w-100 rounded bg-gray-light"
@@ -56,35 +70,42 @@
                                    value="{{ Auth::user()->email }}"><br>
                             @if ($errors->has('new_user_email'))
                                 <span class="help-block">
-                                        <strong>Email no válido</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_email') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <p class="card-title">Escuela Académico Profesional</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-z A-Z]"
+                                   pattern="[a-z A-Z]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_eap"
                                    value="{{ Auth::user()->eap }}"><br>
                             @if ($errors->has('new_user_eap'))
                                 <span class="help-block">
-                                        <strong>!</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_eap') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <p class="card-title">Código de alumno</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="tel"
                                    {{--maxlength="9"--}}
-                                   pattern="[0-9]"
+                                   pattern="[0-9]{8,}"
+                                   maxlength="8"
                                    title="No se permiten números en este campo."
                                    name="new_user_code"
                                    value="{{ Auth::user()->code }}"><br>
                             @if ($errors->has('new_user_code'))
                                 <span class="help-block">
-                                        <strong>!</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_code') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <p class="card-title">Teléfono</p>
@@ -96,8 +117,10 @@
                                    value="{{ Auth::user()->phone }}"><br>
                             @if ($errors->has('new_user_phone'))
                                 <span class="help-block">
-                                        <strong>!</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_phone') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <p class="card-title">Temas de interés</p>
@@ -106,8 +129,10 @@
                                    value="{{ Auth::user()->my_tag }}"><br>
                             @if ($errors->has('new_user_my_tag'))
                                 <span class="help-block">
-                                        <strong>!</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_my_tag') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <p class="card-title">Nombre de Usuario</p>
@@ -116,8 +141,10 @@
                                    value="{{ Auth::user()->alias }}"><br>
                             @if ($errors->has('new_user_alias'))
                                 <span class="help-block">
-                                        <strong>Nombre de usuario no válido</strong>
-                                    </span>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('new_user_alias') }}
+                                        </strong>
+                                </span>
                             @endif
 
                             <div class="modal-footer">

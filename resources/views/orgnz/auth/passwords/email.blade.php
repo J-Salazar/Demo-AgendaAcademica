@@ -24,7 +24,9 @@
 
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('email') }}
+                                        </strong>
                                     </span>
                                 @endif
                             </div>

@@ -241,16 +241,20 @@
             m    = date.getMonth(),
             y    = date.getFullYear()
         $('#calendar').fullCalendar({
+            monthNames: ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+            monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+            dayNames: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+            dayNamesShort: ['Dom','Lun','Mar','Mie','Jue','Vie','Sab'],
             header    : {
                 left  : 'prev,next today',
                 center: 'title',
                 right : 'month,agendaWeek,agendaDay'
             },
             buttonText: {
-                today: 'today',
-                month: 'month',
-                week : 'week',
-                day  : 'day'
+                today: 'hoy',
+                month: 'mes',
+                week : 'semana',
+                day  : 'día'
             },
             //Random default events
             events    : [

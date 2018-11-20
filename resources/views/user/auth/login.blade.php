@@ -19,9 +19,9 @@
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Error. Verifique este campo</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('email') }}
                                         </strong>
-                                    </span>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -35,9 +35,9 @@
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('password') }}
                                         </strong>
-                                    </span>
+                                </span>
                                 @endif
                             </div>
                         </div>

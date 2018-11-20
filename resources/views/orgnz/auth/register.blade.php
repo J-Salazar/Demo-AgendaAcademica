@@ -23,7 +23,9 @@
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
+                                        <strong>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('name') }}
+                                        </strong>
                                     </span>
                                 @endif
                             </div>
@@ -42,9 +44,9 @@
                                        value="{{ old('last_name') }}" autofocus>
 
                                 @if ($errors->has('last_name'))
-                                    <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('last_name') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -56,9 +58,9 @@
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('email') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -70,9 +72,9 @@
                                 <input class="form-control" type="text" name="dir" value="{{ old('dir') }}">
 
                                 @if ($errors->has('dir'))
-                                    <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('dir') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -87,9 +89,9 @@
                                        maxlength="9" name="phone" value="{{ old('phone') }}">
 
                                 @if ($errors->has('phone'))
-                                    <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('phone') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -101,9 +103,9 @@
                                 <input id="alias" type="text" class="form-control" name="alias" value="{{ old('alias') }}" autofocus>
 
                                 @if ($errors->has('alias'))
-                                    <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('alias') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -115,9 +117,9 @@
                                 <input id="password" type="password" class="form-control" name="password">
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong><span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span></strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('password') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>
@@ -129,9 +131,9 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation">
 
                                 @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
+                                    <strong>
+                                        <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('password_confirmation') }}
+                                    </strong>
                                 @endif
                             </div>
                         </div>

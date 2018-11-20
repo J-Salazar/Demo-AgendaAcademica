@@ -26,7 +26,7 @@
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('email') }}
                                         </strong>
                                     </span>
                                 @endif

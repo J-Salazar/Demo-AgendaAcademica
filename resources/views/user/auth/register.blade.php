@@ -25,7 +25,7 @@
                                 @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('name') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -44,7 +44,7 @@
                                 @if ($errors->has('last_name'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('last_name') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -61,7 +61,7 @@
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('email') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -73,14 +73,14 @@
 
                             <div class="col-md-6">
                                 <input id="eap" type="text"
-                                       pattern="[a-z A-Z]"
+                                       pattern="[a-z A-Z]{1,}"
                                        title="No se permiten números en este campo."
                                        class="form-control" name="eap" value="{{ old('eap') }}">
 
                                 @if ($errors->has('eap'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('eap') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -96,7 +96,7 @@
                                 @if ($errors->has('alias'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('alias') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -108,14 +108,15 @@
 
                             <div class="col-md-6">
                                 <input id="code" type="tel"
-                                       pattern="[0-9]"
+                                       pattern="[0-9]{8,}"
+                                       maxlength="8"
                                        title="Solo se permiten números en este campo."
                                        class="form-control" name="code" value="{{ old('code') }}">
 
                                 @if ($errors->has('code'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('code') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -134,7 +135,7 @@
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('phone') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -150,7 +151,7 @@
                                 @if ($errors->has('password'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('password') }}
                                         </strong>
                                     </span>
                                 @endif
@@ -166,7 +167,7 @@
                                 @if ($errors->has('password_confirmation'))
                                     <span class="help-block">
                                         <strong>
-                                            <span class="text-dark"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                                            <img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">{{ $errors->first('password_confirmation') }}
                                         </strong>
                                     </span>
                                 @endif
