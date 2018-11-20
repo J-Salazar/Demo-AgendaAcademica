@@ -27,4 +27,4 @@ Si desea contribuir con este proyecto puede comunicarse con nuestro equipo de de
 
 ## Licencia
 [Mozilla Public License 2.0](https://choosealicense.com/licenses/mpl-2.0/)
->>>>>>> 7816ca0166258022e77d8233804018404aa9a2a5
+
