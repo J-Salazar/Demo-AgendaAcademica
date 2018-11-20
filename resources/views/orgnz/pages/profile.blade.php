@@ -75,6 +75,7 @@
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="tel"
                                    pattern="[0-9]{9,}"
+                                   maxlength="9"
                                    title="Solo se permiten números en este campo."
                                    name="new_orgnz_phone"  value="{{ Auth::user()->phone }}"><br>
                             @if ($errors->has('new_orgnz_phone'))

@@ -114,6 +114,7 @@
                                    pattern="[0-9]{9,}"
                                    title="Solo se permiten números de 9 dígitos en este campo."
                                    name="new_user_phone"
+                                   maxlength="9"
                                    value="{{ Auth::user()->phone }}"><br>
                             @if ($errors->has('new_user_phone'))
                                 <span class="help-block">
