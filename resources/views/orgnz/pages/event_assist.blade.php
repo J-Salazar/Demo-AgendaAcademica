@@ -30,8 +30,8 @@
                         @endif
                     </div>
                     <div class="col-sm-9">
-                        <h1 class="text-bold">Título: {{ $event->title }}</h1>
-                        <h4 class="text-bold">Evento: {{ $event->group }}</h4>
+                        <h1 class="text-bold">{{ $event->title }}</h1>
+                        <h4 class="text-bold">Grupo: {{ $event->group }}</h4>
                     </div>
                     <div class="col-sm-3 text-right">
                         <a class="btn btn-outline-info" href="{{url('/orgnz/event/'.$event->id.'/pdf')}}">Reporte PDF</a>

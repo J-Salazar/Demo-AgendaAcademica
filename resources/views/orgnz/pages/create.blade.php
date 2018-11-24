@@ -51,6 +51,13 @@
                                 <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
                             @endif
 
+                            <p class="card-title">Grupo</p>
+                            <input class="border-light w-100 rounded " value="{{ old('new_event_group')  }}" name="new_event_group"><br>
+
+                            @if($errors->has('new_event_group'))
+                                <span class="text-danger"><img src="{{ asset('open-iconic-master/png/circle-x-2x.png') }}">Campo requerido</span>
+                            @endif
+
                             <p class="card-title">Ponente(s)</p>
                             <input class="border-light w-100 rounded " value="{{ old('new_event_speaker')  }}" name="new_event_speaker"><br>
 

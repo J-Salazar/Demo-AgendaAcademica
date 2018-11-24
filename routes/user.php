@@ -32,3 +32,6 @@ Route::get('/{user_id}/event_save/{event_id}/{interest?}',
     );
 
 Route::get('/{event_id}/info','UserAuth\ActionController@eventinfo');
+
+
+Route::get('/group/{event_group}','UserAuth\ActionController@eventgroup');

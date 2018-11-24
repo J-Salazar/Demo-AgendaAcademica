@@ -124,7 +124,7 @@ Id: #{{$event->id}}
                     </td>
                 </tr>
             @else
-                @for($i = 0; $i < 100; $i++)
+
                 @foreach($users as $user)
                     {{--{{dd($user)}}--}}
                     <tr style="text-align: center;">
@@ -155,7 +155,7 @@ Id: #{{$event->id}}
 
                     </tr>
                 @endforeach
-                @endfor
+
             @endif
             </tbody>
         </table>

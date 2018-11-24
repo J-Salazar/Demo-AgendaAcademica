@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\URL;
+use Barryvdh\DomPDF\Facade as PDF;
 
 
 class ActionController extends Controller
@@ -182,6 +183,16 @@ class ActionController extends Controller
         $event = Event::Find($event_id);
 
         return view('user.pages.info')->with('event',$event);
+    }
+
+    public function eventgroup($event_group)
+    {
+        $events = DB::table('events')->where('group',$event_group)->orderBy('init_date','asc')->get();
+
+        $pdf = PDF::loadView('user.pdf.event_group',['events'=>$events,'event_group'=>$event_group]);
+
+
+        return $pdf->download($event_group.'.pdf');
     }
     
     
