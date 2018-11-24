@@ -36,6 +36,7 @@
                     <th scope="col">id</th>
                     <th scope="col">Título</th>
                     <th scope="col">Descripción</th>
+                    <th scope="col">Ponentes</th>
                     <th scope="col">Fecha</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
@@ -51,6 +52,7 @@
                             <th scope="row">{{ $event->id }}</th>
                             <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>
                             <td>{{ substr(strip_tags($event->description),0,40) }}...</td>
+                            <td>{{ $event->speaker }}</td>
                             <td>{{ $event->init_date }}--{{ $event->end_date }}</td>
                             <td><a class="btn btn-outline-info"
                                    href="{{url('user/'.$user_id.'/event_move/'.$event->id.'/interesa')}}"

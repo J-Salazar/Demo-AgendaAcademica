@@ -67,6 +67,16 @@
         </div>
 
         <div class="row">
+            <div class="col-lg-12 card-body">
+                <h3 class="text-xl"> Ponente(s)</h3>
+                <p>
+{{--                    {{ str_replace(',','<br>',$event->speaker) }}--}}
+                <ul><li>{!!   str_replace(',','</li><br><li>',$event->speaker) !!}</li></ul>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-lg-12">
                 <h3 class="text-xl"> Mas Información</h3>
                 <a href="#" class="text-info">URL</a>
@@ -85,9 +95,9 @@
 
     </div>
     <!-- Footer -->
-    <footer class="page-footer font-small " style="background-color: #838fbd;">
+    <footer class="page-footer font-small " style="background-color: #bbbfdb;">
 
-        <div style="background-color: #5866e1;">
+        <div style="background-color: #999db9;">
             <div class="container">
 
                 <!-- Grid row-->

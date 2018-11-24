@@ -39,6 +39,7 @@
                     <th scope="col">Fecha</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
+                    {{--<th scope="col"></th>--}}
                 </tr>
                 </thead>
                 <tbody>
@@ -54,14 +55,19 @@
                         <tr>
                             <th scope="row">{{ $event->id }}</th>
                             <td>{{ $event->title }}</td>
-                            <td>{{ $event->description }}</td>
+                            <td>{{ substr($event->description,0,20) }} ...</td>
                             <td>{{ $event->init_date }}--{{ $event->end_date }}</td>
+                            @if(  Carbon\Carbon::now()->addHours(2) >= $event->init_date)
+                                <td><a class="btn btn-outline-primary" href="{{url('orgnz/'.$event->id.'/data')}}">Data</a></td>
+                            @else
+                                <td><a class="btn btn-outline-primary disabled" href="{{url('orgnz/'.$event->id.'/data')}}">Data</a></td>
+                            @endif
                             @if($event->init_date < Carbon\Carbon::now())
                                 <td><a class="btn btn-outline-primary disabled" href="{{url('orgnz/'.$orgnz_id.'/event/'.$event->id)}}">Editar</a></td>
-                                <td><a class="btn btn-outline-danger disabled" href="#">Eliminar</a></td>
+                                {{--<td><a class="btn btn-outline-danger disabled" href="#">Eliminar</a></td>--}}
                             @else
                                 <td><a class="btn btn-outline-primary" href="{{url('orgnz/'.$orgnz_id.'/event/'.$event->id)}}">Editar</a></td>
-                                <td><a class="btn btn-outline-danger disabled" href="#">Eliminar</a></td>
+                                {{--<td><a class="btn btn-outline-danger disabled" href="#">Eliminar</a></td>--}}
                             @endif
                         </tr>
                     @endforeach

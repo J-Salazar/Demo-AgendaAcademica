@@ -9,6 +9,7 @@ class Event extends Model
     //
     protected $fillable = [
         'orgnz_id','title','description','site','tag','init_date','end_date',
+        'group','closed','speaker'
     ];
 
     public function orgnzs()
@@ -19,6 +20,7 @@ class Event extends Model
     public function users()
     {
         return $this -> belongsToMany('App\User')
-                            -> withPivot('interest')->withTimestamps();
+                            -> withPivot('interest','attended','payment','certificate_available','certificate_delivered')
+                            ->withTimestamps();
     }
 }

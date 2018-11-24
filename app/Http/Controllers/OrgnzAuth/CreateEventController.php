@@ -23,6 +23,7 @@ class CreateEventController extends Controller
             'new_event_description' => 'required',
             'new_event_site' => 'required',
             'new_event_tag' => 'required',
+            'new_event_speaker' => 'required',
             'new_event_date' => 'required',
             'new_event_date_end' => 'required',
         ]);
@@ -45,8 +46,9 @@ class CreateEventController extends Controller
         $new_event->description= $request->new_event_description;
         $new_event->site       = $request->new_event_site;
         $new_event->tag        = $request->new_event_tag;
-        $new_event->init_date = $request->new_event_date;
-        $new_event->end_date = $request->new_event_date_end;
+        $new_event->speaker    = $request->new_event_speaker;
+        $new_event->init_date  = $request->new_event_date;
+        $new_event->end_date   = $request->new_event_date_end;
 
 
         $new_event -> save();

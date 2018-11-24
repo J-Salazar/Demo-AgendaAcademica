@@ -18,8 +18,12 @@ class CreateEventUserTable extends Migration
 
             $table->integer('event_id')->unsigned();
             $table->integer('user_id')->unsigned();
-
+//nullable
             $table->string('interest');
+            $table->boolean('attended');
+            $table->boolean('payment');
+            $table->boolean('certificate_available');
+            $table->boolean('certificate_delivered');
 
             $table->timestamps();
         });

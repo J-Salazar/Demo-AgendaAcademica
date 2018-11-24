@@ -23,6 +23,11 @@ class CreateEventsTable extends Migration
             $table->text('description');
             $table->string('site');
             $table->string('tag');
+            //
+            $table->string('group')->nullable();
+            $table->boolean('closed')->nullable()->default(0);
+            $table->string('speaker')->nullable();
+            //
             $table->timestamp('init_date');
             $table->timestamp('end_date');
 
