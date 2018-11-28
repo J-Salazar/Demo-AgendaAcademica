@@ -1,6 +1,8 @@
 # Agenda Académica
 
-Este proyecto fue realizado por estudiantes de la Universidad Nacional Mayor de San Marcos como parte del curso Ciencias de la Computación V
+Este proyecto fue realizado por estudiantes de la Universidad Nacional Mayor de San Marcos como parte del curso Ciencias de la Computación V.  
+Una aplicación web para crear actividadades y eventos académicos, permite marcar y guardar tus actividades
+para una posterior visualización en agenda.
 
 ## Instalación
 

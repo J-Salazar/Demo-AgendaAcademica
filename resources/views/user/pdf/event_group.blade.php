@@ -6,7 +6,6 @@
 
     <style type="text/css">
         @page {
-            margin: 0px;
         }
         body {
             margin: 0px;
@@ -108,7 +107,6 @@ Etiquetas: {{ $events->first()->tag }}
 
 <div class="invoice" style="margin-left: 8% !important;">
     <h3>Lista de Eventos en este grupo</h3>
-    @for($i=0;$i<50;$i++)
     @foreach($events as $event)
         <div style="margin-left: 5%">
         <h4 style="text-align: left !important;">ID: #{{$event->id}}</h4>
@@ -126,7 +124,6 @@ Etiquetas: {{ $events->first()->tag }}
             <div class="page-break"></div>
         </div>
     @endforeach
-        @endfor
 </div>
 
 <div class="information" style="position: absolute; bottom: 0;">

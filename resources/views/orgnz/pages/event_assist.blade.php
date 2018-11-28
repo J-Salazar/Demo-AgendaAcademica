@@ -34,7 +34,7 @@
                         <h4 class="text-bold">Grupo: {{ $event->group }}</h4>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <a class="btn btn-outline-info" style="color: #fff; background-color: #0d47a1" href="{{url('/orgnz/event/'.$event->id.'/pdf')}}">Reporte PDF</a>
+                        <a class="btn btn-outline-info bb" style="color: #fff; background-color: #0d47a1" href="{{url('/orgnz/event/'.$event->id.'/pdf')}}">Reporte PDF</a>
                     </div>
                     <div class="col-sm-6">
                         <h3>Relación de asistentes</h3>
