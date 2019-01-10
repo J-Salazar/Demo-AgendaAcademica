@@ -61,7 +61,7 @@ Nota:
 Puede reemplazar el numero 1 por cualquiera del 1 al 5  
 Las mismas credenciales sirven para usuario y organizador
 
-##Autores:
+## Autores:
 * Idea y plan de negocio:    
 Ruiz Cecilio, Christopher  
 * Desarrollador web:  
