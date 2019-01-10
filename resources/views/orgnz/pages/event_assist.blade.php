@@ -145,6 +145,7 @@
             });
         });
     </script>
+    {{--Si el evento esta cerrado no se puede modificar los datos en la tabla--}}
     @if($event->closed)
         <script>
             $("#event-table a").click(function(e) {

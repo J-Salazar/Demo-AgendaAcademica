@@ -17,19 +17,19 @@ class CreateEventsTable extends Migration
             $table->increments('id');
 
             $table->integer('orgnz_id')->unsigned();
-            $table->foreign('orgnz_id')->references('id')->on('orgnzs');
+            $table->foreign('orgnz_id')->references('id')->on('orgnzs');//clave foranea
 
-            $table->string('title');
-            $table->text('description');
-            $table->string('site');
-            $table->string('tag');
+            $table->string('title');//titulo
+            $table->text('description');//descripcion
+            $table->string('site');//sitio
+            $table->string('tag');//etiquetas o temas tratados
             //
-            $table->string('group')->nullable();
-            $table->boolean('closed')->nullable()->default(0);
-            $table->string('speaker')->nullable();
+            $table->string('group')->nullable();//grupo del evento
+            $table->boolean('closed')->nullable()->default(0);//evento cerrado
+            $table->string('speaker')->nullable();//ponentes del evento
             //
-            $table->timestamp('init_date');
-            $table->timestamp('end_date');
+            $table->timestamp('init_date');//fecha de inicio del evento
+            $table->timestamp('end_date');//fecha de fin del evento
 
             $table->timestamps();
         });

@@ -40,15 +40,22 @@ class User extends Authenticatable
         $this->notify(new UserResetPassword($token));
     }
 
+    //-------
+    //Relacion creada para facilitar las consultas?
+    //(Por verificar)
+    //-------
     public function orgnzs()
     {
         return $this->belongsToMany(Orgnz::class);
     }
 
+    //Relacion muchos a muchos users-events
+    //con tabla pivote o intermedia
     public function events()
     {
+        //un usuario puede tener muchos eventos asociados
         return $this -> belongsToMany('App\Event')
-                            -> withPivot('interest','attended','payment','certificate_available','certificate_delivered')
+                            ->withPivot('interest','attended','payment','certificate_available','certificate_delivered')
                             ->withTimestamps();
     }
 }

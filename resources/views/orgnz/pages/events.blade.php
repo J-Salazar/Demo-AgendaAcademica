@@ -57,7 +57,6 @@
                             <th scope="row">{{ $event->id }}</th>
                             <td>{{ $event->title }}</td>
                             <td>{{ substr($event->description,0,20) }} ...</td>
-                            {{--<td><a href="{{url('/orgnz/group/'.$event->group)}}">{{ $event->group }} </a></td>--}}
                             <td>{{ $event->init_date }}--{{ $event->end_date }}</td>
                             @if(  Carbon\Carbon::now()->addHours(2) >= $event->init_date)
                                 <td><a class="btn btn-outline-primary" href="{{url('orgnz/'.$event->id.'/data')}}">Data</a></td>

@@ -16,11 +16,11 @@ class CreateOrgnzsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('last_name');
-            $table->string('desc')->default('Informacion no disponible');
-            $table->string('alias')->unique();
+            $table->string('desc')->default('Informacion no disponible');//descripicion del organizador
+            $table->string('alias')->unique();//nickname
             $table->string('email')->unique();
-            $table->string('dir');
-            $table->string('phone');
+            $table->string('dir');//direccion
+            $table->integer('phone');
 
             $table->string('password');
 

@@ -48,13 +48,14 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        //Validacion de datos
         return Validator::make($data, [
             'name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'dir' => 'required|max:255',
-            'phone' => 'required|max:255',
-            'alias' => 'required|max:255|unique:orgnzs',
-            'email' => 'required|email|max:255|unique:orgnzs',
+            'phone' => 'required|max:12',
+            'alias' => 'required|max:255|unique:orgnzs',        //alias no registrado en la tabla
+            'email' => 'required|email|max:255|unique:orgnzs',  //email no registrado en la tabla
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -68,13 +69,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return Orgnz::create([
-            'name' => $data['name'],
-            'last_name' => $data['last_name'],
-            'alias' => $data['alias'],
-            'email' => $data['email'],
-            'dir' => $data['dir'],
-            'phone' => $data['phone'],
-            'password' => bcrypt($data['password']),
+            'name'       => $data['name'],
+            'last_name'  => $data['last_name'],
+            'alias'      => $data['alias'],
+            'email'      => $data['email'],
+            'dir'        => $data['dir'],
+            'phone'      => $data['phone'],
+            'password'   => bcrypt($data['password']),
         ]);
     }
 

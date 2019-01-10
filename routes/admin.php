@@ -1,5 +1,5 @@
 <?php
-
+//NO IMPLEMENTADO
 Route::get('/home', function () {
     $users[] = Auth::user();
     $users[] = Auth::guard()->user();

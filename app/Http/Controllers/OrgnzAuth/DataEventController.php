@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\URL;
 
 class DataEventController extends Controller
 {
-    //
+    //Metodo que devuelve los usuarios que marcaron como asistire al evento
+//    solicitado($event_id)
+
     public function data($event_id)
     {
         $event = Event::Find($event_id);
@@ -30,6 +32,8 @@ class DataEventController extends Controller
         return view('orgnz.pages.event_assist')->with(['users'=>$asistentes,'event'=>$event]);
     }
 
+//    Metodo encargado de actualizar una propiedad de la relacion evento-usuario
+//    con el valor value en el campo key
     public function data_update($event_id, $user_id, $key, $value)
     {
 
@@ -43,14 +47,17 @@ class DataEventController extends Controller
 
         } else{
             $user->events
-                ->where('id',$event_id)
-                ->first()
-                ->pivot
-                ->update([$key=>$value]);
+                 ->where('id',$event_id)
+                 ->first()
+                 ->pivot
+                 ->update([$key=>$value]); // Se actualiza la clave key con el valor value
         }
 
         return redirect(url(URL::previous()));
     }
+
+//    Metodo que cierra el evento para que la informacion
+//    en la BD no pueda ser modificada pero si leida
 
     public function close($event_id)
     {
@@ -63,6 +70,8 @@ class DataEventController extends Controller
         return redirect(url(URL::previous()));
     }
 
+//    Metodo encargado de generar un reporte pdf al organizador
+//    de un evento con los usuarios que han marcado como asistire al evento hasta el momento
     public function pdf($event_id)
     {
         $event = Event::Find($event_id);

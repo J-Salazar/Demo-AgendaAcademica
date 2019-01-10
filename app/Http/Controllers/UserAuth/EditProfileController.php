@@ -9,9 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class EditProfileController extends Controller
 {
-    //
-
-
+    //Metodo que edite los datos personales del usuario
     public function edit(Request $request){
         $user = Auth::user();
         $id = Auth::user()->id;

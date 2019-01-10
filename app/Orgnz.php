@@ -41,6 +41,8 @@ class Orgnz extends Authenticatable
         $this->notify(new OrgnzResetPassword($token));
     }
 
+    //Relacion uno a muchos de orgnzs-events
+    //Un organizador puede tener muchos eventos asociados
     public function events()
     {
         return $this->hasMany('App\Event');

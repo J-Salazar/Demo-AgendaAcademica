@@ -159,7 +159,7 @@
     <section class="my-5">
 
         <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold text-center my-5">Por qué nuestra plataforma es mejor?</h2>
+        <h2 class="h1-responsive font-weight-bold text-center my-5">¿Por qué escoger nuestra plataforma?</h2>
         <!-- Section description -->
         <p class="lead grey-text text-center w-responsive mx-auto mb-5">Contamos con la mejor forma de poder hacer que sus eventos, exposiciones o conferencias lleguen a mas personas interesadas a través de nuestra plataforma debido a la interactividad y a sus características que presenta.</p>
 
@@ -249,94 +249,6 @@
 
     </section>
     <!-- Section: Features v.2 -->
-
-    <!-- Section: Team v.3 -->
-    <section class="team-section my-5">
-
-        <!-- Section heading -->
-        <h2 class="h1-responsive font-weight-bold text-center my-5">Nuestro genial equipo</h2>
-        <!-- Section description -->
-        <p class="grey-text text-center w-responsive mx-auto mb-5">Describiendo a nuestro equipo que se encarga de darle la mayor satisfacción y comodidad posible en su travesía en nuestra plataforma.</p>
-
-        <!-- Grid row-->
-        <div class="row text-center text-md-left">
-
-            <!-- Grid column -->
-            <div class="col-lg-6 col-md-12 mb-5">
-                <div class="col-md-4 col-lg-6 float-left">
-                    <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://scontent.flim5-1.fna.fbcdn.net/v/t31.0-8/289092_266420016708914_2043625_o.jpg?_nc_cat=104&_nc_ht=scontent.flim5-1.fna&oh=87840be7678ef9636d96115332ab3c9b&oe=5C641231" width="350" height="250" class="rounded z-depth-1" alt="Sample avatar">
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">Salazar Ramos, Jose</h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Programador</h6>
-                    <h6 class="font-weight-bold grey-text mb-3">Desarrollador web</h6>
-                    <p class="grey-text">Estudiante universitario, 23 años.
-                    Interesado en Inteligencia Artificial y algoritmos de optimización.</p>
-                    <p class="grey-text">Desarrollador aficionado de videojuegos.</p>
-                    <!-- Facebook-->
-                    <a class="p-2 fa-lg fb-ic">
-                        <i class="fa fa-facebook"> </i>
-                    </a>
-                    <!-- Twitter -->
-                    <a class="p-2 fa-lg tw-ic">
-                        <i class="fa fa-twitter"> </i>
-                    </a>
-
-                </div>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-lg-6 col-md-12 mb-5">
-                <div class="col-md-4 col-lg-6 float-left">
-                    <div class="avatar mx-auto mb-md-0 mb-4">
-                        <img src="https://scontent.flim5-4.fna.fbcdn.net/v/t1.0-9/15977491_10209924654370582_5178567594238498667_n.jpg?_nc_cat=106&_nc_ht=scontent.flim5-4.fna&oh=99b3c86e378e48b1bc9cb5f3e96afb4c&oe=5C6EDC0B" width="200" height="300" class="rounded z-depth-1" alt="Sample avatar">
-                    </div>
-                </div>
-                <div class="col-md-8 col-lg-6 float-right">
-                    <h4 class="font-weight-bold mb-3">Ruiz Cecilio, Christopher </h4>
-                    <h6 class="font-weight-bold grey-text mb-3">Programador</h6>
-					<h6 class="font-weight-bold grey-text mb-3">Director en proyectos</h6>
-                    <p class="grey-text">Aficionado a los videojuegos y a la tecnologia, programador web, 24 años, universitario</p>
-                    <!-- Facebook-->
-                    <a class="p-2 fa-lg fb-ic">
-                        <i class="fa fa-facebook"> </i>
-                    </a>
-                    <!--YouTube -->
-                    <a class="p-2 fa-lg yt-ic">
-                        <i class="fa fa-youtube"> </i>
-                    </a>
-                    <!--Instagram-->
-                    <a class="p-2 fa-lg ins-ic">
-                        <i class="fa fa-instagram"> </i>
-                    </a>
-                </div>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            
-            <!-- Grid column -->
-
-        </div>
-        <!-- Grid row-->
-
-        <!-- Grid row-->
-        <div class="row text-center text-md-left">
-
-
-
-        </div>
-        <!-- Grid row-->
-
-    </section>
-    <!-- Section: Team v.3 -->
 
 
     <!-- Section: Testimonials v.3 -->
@@ -503,7 +415,7 @@
 
                 <!-- Grid column -->
                 <div class="col-md-8 col-lg-8 col-xl-8 mx-auto mt-3">
-                    <h6 class="text-uppercase mb-4 font-weight-bold">RCSR</h6>
+                    <h6 class="text-uppercase mb-4 font-weight-bold">SM-dev</h6>
                     <p>Empresa tecnologica de desarrollo web, enfocada en soluciones para el sector educativo publico y privado.</p>
                     <p>Innovación de hoy para el éxito del mañana.</p>
                 </div>
@@ -527,13 +439,11 @@
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
                     <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
                     <p>
-                        <i class="fa fa-home mr-3"></i> Jr. Piedra Bigua 2277</p>
+                        <i class="fa fa-home mr-3"></i>UNMSM</p>
                     <p>
                         <i class="fa fa-envelope mr-3"></i> jose.salazar1@unmsm.edu.pe</p>
                     <p>
-                        <i class="fa fa-envelope mr-3"></i> christopher.ruiz@unmsm.edu.pe</p>
-                    <p>
-                        <i class="fa fa-phone mr-3"></i> +51 931 093 244</p>
+                        <i class="fa fa-phone mr-3"></i> +51 992 159 321</p>
                 </div>
                 <!-- Grid column -->
 
@@ -550,8 +460,8 @@
 
                     <!--Copyright-->
                     <p class="text-center text-md-left">© 2018 Copyright:
-                        <a href="https://mdbootstrap.com/bootstrap-tutorial/">
-                            <strong> RCSR.com</strong>
+                        <a href="{{url('/')}}">
+                            <strong> Agenda Académica</strong>
                         </a>
                     </p>
 

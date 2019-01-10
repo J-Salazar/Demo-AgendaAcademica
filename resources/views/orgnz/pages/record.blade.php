@@ -14,5 +14,5 @@
 @endsection
 
 @section('contenido')
-    <span>ABCDEF</span>
+    {{----}}
 @endsection

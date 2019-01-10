@@ -15,9 +15,11 @@ class Chartjs extends Controller
     //
     public function home()
     {
+//      Metodo que envia data a la vista home del organizador
+//      con informacion de las personas suscritas a sus eventos en la ultima semana
+
         $orgnz_id = Auth::user()->id;
         $orgnz = Orgnz::Find($orgnz_id);
-//        App\Orgnz::Find(1)->events->where('end_date','<=',Carbon\Carbon::now())
         $last_week_events = $orgnz->events->where('end_date','>=',Carbon::now());
 
         if ($last_week_events->first() == null){

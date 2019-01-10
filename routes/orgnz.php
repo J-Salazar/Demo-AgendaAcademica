@@ -75,7 +75,3 @@ Route::get('/event/{event_id}/closed','OrgnzAuth\DataEventController@close');
 
 Route::get('/event/{event_id}/pdf','OrgnzAuth\DataEventController@pdf');
 
-//Route::get('/event/{event_id}/update', function ($event_id){
-//    $orgnz_id = Event::Find($event_id);
-//    return redirect('orgnz'.$orgnz_id.'/event/'.$event_id);
-//});

@@ -1,3 +1,5 @@
+
+{{--NO IMPLEMENTADO--}}
 @extends('admin.layout.auth')
 
 @section('link-inicio','active')

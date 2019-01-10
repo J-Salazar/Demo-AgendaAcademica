@@ -86,10 +86,8 @@
                     <th >id</th>
                     <th >Título</th>
                     <th >Descripción</th>
-                    <th >Duracion</th>
+                    <th >Duración</th>
                     <th colspan="3"></th>
-                    {{--<th ></th>--}}
-                    {{--<th ></th>--}}
                 </tr>
                 </tfoot>
                 @endif

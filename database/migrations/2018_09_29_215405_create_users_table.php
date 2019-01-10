@@ -16,13 +16,13 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('last_name');
-            $table->string('eap');
-            $table->string('my_tag')->nullable();
-            $table->string('sys_tag')->nullable();
-            $table->string('alias')->unique();
-            $table->string('code')->unique();
+            $table->string('eap');//escuela academico profesional
+            $table->string('my_tag')->nullable();//tema de preferencia
+            $table->string('sys_tag')->nullable();//temas de preferencia asignados por actividad(por implementar)
+            $table->string('alias')->unique();//nickname
+            $table->integer('code')->unique();//codigo de alumno
             $table->string('email')->unique();
-            $table->string('phone');
+            $table->integer('phone');
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

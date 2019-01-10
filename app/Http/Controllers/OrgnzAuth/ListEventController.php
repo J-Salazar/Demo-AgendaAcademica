@@ -91,7 +91,6 @@ class ListEventController extends Controller
         $event -> save();
 
         $mensaje = 'Evento actualizado';
-//        return view('orgnz.pages.edit')->with(['mensaje'=>$mensaje,'event'=>$event]);
         return redirect(url('orgnz/'.$orgnz_id.'/event/'.$event_id))->with(['mensaje'=>$mensaje,'event'=>$event]);
     }
 }
