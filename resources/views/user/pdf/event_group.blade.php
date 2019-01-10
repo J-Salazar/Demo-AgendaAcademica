@@ -116,7 +116,7 @@ Etiquetas: {{ $events->first()->tag }}
         <p style="text-align: left !important;">Lugar</p>
         <p style="text-align: center !important; font-size: small">{!! $event->site !!}</p>
         <p style="text-align: left !important;">Fecha y horario:</p>
-        <p style="text-align: left !important; font-size: small">{{ $event->init_date }}  {{ $event->end_date }}</p>
+        <p style="text-align: left !important; font-size: small">Inicio:{{ $event->init_date }}, Fin:  {{ $event->end_date }}</p>
         <p style="text-align: left !important;">Temas:</p>
         <p style="text-align: left !important; font-size: small"><ul><li>{!!   str_replace(',','</li><br><li>',$event->tag) !!}</li></ul></p>
         <p style="text-align: left !important; ">Ponentes: </p>

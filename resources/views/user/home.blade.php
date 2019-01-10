@@ -46,7 +46,7 @@
                     </tr>
                 @else
 {{--                    {{dd($events)}}--}}
-                @foreach($events as $event)
+                @foreach($events->where('init_date','>',Carbon\Carbon::now()) as $event)
                     <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td><a href="{{url('user/'.$event->id.'/info')}}" target="_blank">{{ $event->title }}</a></td>

@@ -37,7 +37,7 @@
                             <p class="card-title">Nombres</p>
                             <input class="border-light w-100 rounded bg-gray-light"
                                    type="text"
-                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ\s]{1,}"
+                                   pattern="[a-zA-ZñÑáéíóúÁÉÍÓÚ.\s]{1,}"
                                    title="No se permiten números en este campo."
                                    name="new_user_name"
                                    value="{{ Auth::user()->name }}"><br>
