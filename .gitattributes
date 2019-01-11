@@ -1,3 +1,4 @@
 * text=auto
 public/* linguist-vendored
+*.blade.php linguist-language=PHP
 CHANGELOG.md export-ignore
