@@ -49,7 +49,7 @@ mas no editable
 * Ademas el organizador podra generar reportes pdf de la informacion relacionada a cada uno de sus eventos en la seccion Data
 
 ## Demo
-[Demostracion online](http://www.testingapp.me)
+[Demostracion online](http://agenda-academica-demo.sa-east-1.elasticbeanstalk.com/)
 
 
 
