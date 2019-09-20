@@ -2,105 +2,18 @@
 
 <html>
 <head>
-    <title>{{ Auth::user() }}</title>
+    <title>Agenda Academica</title>
     <meta charset="UTF-8">
     <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{{asset('css/styles.css')}}">
+{{--    <link rel="stylesheet" href="{{asset('css/styles2.css')}}">--}}
+<!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
 
-    <link href="{{ asset('/css/mycss.css') }}" rel="stylesheet">
-
-    <style>
-        .ml-6{
-            margin-left:3.5rem!important
-        }
-        .ml-7{
-            margin-left: 4rem!important;
-        }
-        .ml-8{
-            margin-left: 4.5rem!important;
-        }
-        .ml-9{
-            margin-left: 5rem!important;
-        }
-        .ml-10{
-            margin-left: 5.5rem!important;
-        }
-
-        @media screen and (max-width: 992px)  {
-
-            img.mylogo {
-
-                display: block !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                width: 50% !important;
-                height: 50% !important;
-            }
-
-
-
-        }
-
-        @media screen and (min-width: 993px)  {
-
-            img.mylogo {
-
-                display: block !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                width: 75% !important;
-                height: 75% !important;
-            }
-
-
-        }
-
-
-        @media screen and (max-width: 768px)  {
-
-
-
-            a.mybutton{
-                display: block !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                padding: 11px !important;
-                font-size: 12px !important;
-
-            }
-
-
-        }
-
-        @media (max-width: 845px) {
-            #mycards {
-                -ms-flex-flow: row wrap !important;
-                flex-flow: row wrap !important;
-                margin-right: -15px !important;
-                margin-left: -15px !important;
-            }
-
-            #mycards  {
-                display: -ms-flexbox !important;
-                display: flex !important;
-                -ms-flex: 1 0 0% !important;
-                flex: 1 0 0% !important;
-                -ms-flex-direction: column !important;
-                flex-direction: column !important;
-                margin-right: 15px !important;
-                margin-bottom: 0 !important;
-                margin-left: 15px !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -508,19 +421,9 @@
 
     </footer>
     <!-- Footer -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
+    <!--Laravel mix JS compiled-->
+    <script href="public/js/app.js"></script>
 
 
 
