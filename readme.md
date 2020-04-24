@@ -48,18 +48,6 @@ mas no editable
 
 * Ademas el organizador podra generar reportes pdf de la informacion relacionada a cada uno de sus eventos en la seccion Data
 
-## Demo
-[Demostracion online](http://demo-agenda-academica.sa-east-1.elasticbeanstalk.com/)
-
-
-
-Puede iniciar sesion como  
-User:  demo1@gmail.com  
-Password:  demo123  
-
-Nota:  
-Puede reemplazar el numero 1 por cualquiera del 1 al 5  
-Las mismas credenciales sirven para usuario y organizador
 
 ## Autores:
 * Idea y plan de negocio:    
