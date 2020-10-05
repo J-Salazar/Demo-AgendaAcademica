@@ -83,6 +83,7 @@ Las mismas credenciales sirven para usuario y organizador
 
 ##Autores:
 
+
 * Desarrollador web:  
 Salazar Ramos, Jose Gregorio  
 * Idea y plan de negocio:    
