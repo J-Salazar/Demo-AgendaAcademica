@@ -48,8 +48,28 @@ mas no editable
 
 * Ademas el organizador podra generar reportes pdf de la informacion relacionada a cada uno de sus eventos en la seccion Data
 
-## Demo
-[Demostracion online](http://www.testingapp.me)
+## Instalación
+
+1. Instale un servidor local como (por ejemplo: laragon)
+2. Haga una copia del proyecto usando el comando
+```bash
+git clone https://github.com/J-Salazar/Demo-AgendaAcademica.git
+```
+3. Utilice composer para instalar las dependencias con el comando
+
+```bash
+composer install
+```
+4. Cree una base de datos mysql e introduzca las credenciales en el archivo .env
+5. Ejecute las migraciones del proyecto mediante el comando
+```bash
+php artisan migrate:fresh
+```
+6. Llene la base de datos de prueba
+```bash
+php artisan db:seed
+```
+7. Listo, puede acceder al proyecto a través de la dirección localhost
 
 
 
@@ -62,8 +82,9 @@ Puede reemplazar el numero 1 por cualquiera del 1 al 5
 Las mismas credenciales sirven para usuario y organizador
 
 ##Autores:
-* Idea y plan de negocio:    
-Ruiz Cecilio, Christopher  
 * Desarrollador web:  
 Salazar Ramos, Jose Gregorio  
+* Idea y plan de negocio:    
+Ruiz Cecilio, Christopher  
+
 
